@@ -5,6 +5,8 @@ Brief intro to what this guide covers...
 
 ## Install Python
 Step-by-step instructions...
+> [!note] a note
+> hello world!
 
 ### Windows
 <details>
