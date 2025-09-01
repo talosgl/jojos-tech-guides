@@ -1,4 +1,4 @@
-# Get set up to run python scripts on your computer
+# Get Set Up to Install and Run Python Scripts on Your Computer
 
 ## Overview
 This is a quick and easy guide to help you get set up to run Python scripts on your computer. We'll cover the steps necessary for Windows 11, macOS, and Linux (via Ubuntu).
@@ -10,11 +10,10 @@ Tech-savvy folks who:
 - are comfortable with basic computer tasks
 - want to get something working quickly (no coding required)
 
-We're going to be using the terminal (also called commandline, console, or shell), but it's completely fine if you're not used to doing that.
+We're going to be using the terminal (also called commandline, console, or shell), but it's completely fine if you're not used to doing that; you don't need existing experience.
 
 ### Goal
 Get from "I found this useful .py script" to "it's running on my computer" with minimal fuss and a sustainable setup for future tools.
-
 
 ## Guide/Steps
 ### Install Python
@@ -23,7 +22,8 @@ Get from "I found this useful .py script" to "it's running on my computer" with 
 (a free & open-source "IDE" or Integrated Development Environment)
 ### Get Folder Structure Ready
 Split this out on Win/mac/Linux
-
+Windows: `C:\py-scripts\`
+Mac/Linux: `~/py-scripts/`
 ### Set up venv
 - Open the soon-to-be-gotten script's folder in VS Code as a "workspace"
 - CTRL+SHIFT+P
@@ -50,25 +50,11 @@ Let's review what we've done so you can reference it later.
 - Successfully ran your first script in its isolated environment
 
 ## Further Reading
+- [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_creating-environments) - official VS Code documentation on using virtual environments
+- [Learning Resources]([[learning-resources]]) - links I've collected to other helpful (external) tutorials and guides
 ### Other Useful Python Scripts
 #TODO change to the pip pages with repo as secondary link
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 - [gallery-dl](https://github.com/mikf/gallery-dl)
 - [csvkit](https://csvkit.readthedocs.io/en/latest/)
 - [internetarchive cli tool `ia`](https://archive.org/developers/internetarchive/cli.html)
-
-### Deep-dive Learning Resources
-About Python virtual environments:
-- [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_creating-environments)
-- [venv — Creation of virtual environments]( https://docs.python.org/3/library/venv.html)
-- [Virtual Environments and Packages](https://docs.python.org/3/tutorial/venv.html)
-
-About Python development:
- - [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/) by Software Carpentry: 
-	 - "This lesson teaches novice programmers to write modular code to perform data analysis using Python. The emphasis, however, is on teaching language-agnostic principles of programming such as automation with loops and encapsulation with functions..."
- - [The Python Tutorial](https://docs.python.org/3/tutorial/index.html)
-	 -  This tutorial is designed for programmers that are new to the Python language, not beginners who are new to programming.
-
-Get more comfortable using the terminal:
-- Guide to [The Unix Shell](https://swcarpentry.github.io/shell-novice/) by Software Carpentry:
-	- "An introduction to the Unix shell for people who have never used the command line before."
