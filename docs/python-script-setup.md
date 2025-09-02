@@ -66,8 +66,8 @@ Linux:
 ### Create a Folder for a new script
 To get set up to install our first Python Script, let's make a new folder inside the one we just made. For our example we're going to install `yt-dlp`, so let's create a folder with that name:
 
-<img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="600">
- 
+<img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="600"> 
+
 ### Open new script folder in VS Code
 We next want to open this folder as a "workspace" in VS Code. 
 
@@ -82,9 +82,13 @@ Linux:
 {ADD}
 
 From inside VS Code, go to File > Open Folder:
+
 <img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
+
 <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
+
 You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
+
 <img src="imgs/python-script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="500">
 
 Mac:
@@ -102,7 +106,9 @@ Here's a quick tour of the UI and what I'll be calling different parts of it thr
 4. **Run and Debug** panel - for the advanced script launcher
 
 <img src="imgs/python-script-setup/Pasted image 20250902160012.png" alt="VS Code UI overview showing main panels" width="600">
+
 <img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="600">
+
 ### Set up Virtual Environment ( `venv`) for this specific script
 We're ready to set up a "virtual environment", or [venv](https://docs.python.org/3/library/venv.html),  in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python without needing to worry about what such-and-such script might've done.
 
@@ -224,7 +230,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 **Step 1: Open the Run and Debug panel**
 - Click the "Run and Debug" icon in the left sidebar of VS Code (looks like a play button with a bug)
 - Or use `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (Mac)
-<img src="imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300">
+- <img src="imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300">
 
 **Step 2: Create launch configuration**
 - Click "create a launch.json file" link
