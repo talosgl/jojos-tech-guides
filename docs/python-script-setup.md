@@ -20,7 +20,7 @@ Get from "I found this useful .py script" to "it's running on my computer" with 
 Go to https://www.python.org/downloads/ and download and install the newest version of Python for your platform.
 
 Windows:
-![[imgs/python-script-setup/Pasted image 20250902130347.png|500]]
+<img src="imgs/python-script-setup/Pasted image 20250902130347.png" alt="Python download page for Windows" width="500">
 
 Mac:
 {ADD}
@@ -34,7 +34,7 @@ This installation includes the essential program to read and execute Python code
 ### Install VS Code
 Go to https://code.visualstudio.com/download and download and install the newest version of VS Code for your platform.
 
-![[imgs/python-script-setup/Pasted image 20250902131142.png|500]]
+<img src="imgs/python-script-setup/Pasted image 20250902131142.png" alt="VS Code download page" width="500">
 
 #### What is this, and why am I installing it?
 VS Code is a free and open-source "IDE" or Integrated Development Environment. We're installing it so that we have an easy graphical user interface (GUI) with which we can inspect and run Python scripts safely in their own isolated "virtual environments." (We'll set up virtual environments shortly to keep each script's requirements separate.)
@@ -52,9 +52,9 @@ You can create this new folder wherever you wish; but here's my suggested spot f
 Create this folder using your operating system's file manager: navigate to the folder, right-click, and select "New Folder" in Windows/Linux; or, in Mac's Finder, use `Cmd+Shift+N`.
 
 Windows:
-![[imgs/python-script-setup/Pasted image 20250902131953.png|600]]
+<img src="imgs/python-script-setup/Pasted image 20250902131953.png" alt="Windows File Explorer showing C: drive" width="600">
 
-![[imgs/python-script-setup/Pasted image 20250902141805.png|600]]
+<img src="imgs/python-script-setup/Pasted image 20250902141805.png" alt="Creating new folder in Windows" width="600">
 
 Mac:
 {ADD}
@@ -66,14 +66,14 @@ Linux:
 ### Create a Folder for a new script
 To get set up to install our first Python Script, let's make a new folder inside the one we just made. For our example we're going to install `yt-dlp`, so let's create a folder with that name:
 
-![[imgs/python-script-setup/Pasted image 20250902141839.png|600]]
+<img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="600">
  
 ### Open new script folder in VS Code
 We next want to open this folder as a "workspace" in VS Code. 
 
 Windows: 
 - Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
-	- ![[imgs/python-script-setup/Pasted image 20250902142931.png|500]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
 
 Mac:
 {ADD}
@@ -82,10 +82,10 @@ Linux:
 {ADD}
 
 From inside VS Code, go to File > Open Folder:
-![[imgs/python-script-setup/Pasted image 20250902143052.png|500]]
-![[imgs/python-script-setup/Pasted image 20250902143143.png|500]]
+<img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
+<img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
 You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
-![[imgs/python-script-setup/Pasted image 20250902143233.png|500]]
+<img src="imgs/python-script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="500">
 
 Mac:
 {ADD}
@@ -101,8 +101,8 @@ Here's a quick tour of the UI and what I'll be calling different parts of it thr
 3. **Integrated Terminal** - where we'll run commands
 4. **Run and Debug** panel - for the advanced script launcher
 
-![[imgs/python-script-setup/Pasted image 20250902160012.png|600]]
-![[imgs/python-script-setup/Pasted image 20250902160154.png|600]]
+<img src="imgs/python-script-setup/Pasted image 20250902160012.png" alt="VS Code UI overview showing main panels" width="600">
+<img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="600">
 ### Set up Virtual Environment ( `venv`) for this specific script
 We're ready to set up a "virtual environment", or [venv](https://docs.python.org/3/library/venv.html),  in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python without needing to worry about what such-and-such script might've done.
 
@@ -111,16 +111,16 @@ Let's do it.
 	- Windows/Linux: CTRL+SHIFT+P
 	- Mac: CMD+SHIFT+P
 2. Start typing "Python: Create Enviornment" and then select it from the list:
-	- ![[imgs/python-script-setup/Pasted image 20250902144605.png|600]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902144605.png" alt="VS Code Command Palette showing Python Create Environment option" width="600">
 3. Select Venv from the options:
-	- ![[imgs/python-script-setup/Pasted image 20250902144651.png|600]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902144651.png" alt="Python environment type selection showing Venv option" width="600">
 4. Select the Global Python interpreter to kick off our venv:
-	- ![[imgs/python-script-setup/Pasted image 20250902144731.png|600]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902144731.png" alt="Python interpreter selection dialog" width="600">
 5. VS Code will pop a notification to tell us it's doing the thing, and then that it's finished:
-	- ![[imgs/python-script-setup/Pasted image 20250902144801.png|600]]
-	- ![[Pasted image 20250902144851.png|600]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902144801.png" alt="VS Code notification: Creating Python environment" width="600">
+	- <img src="imgs/python-script-setup/Pasted image 20250902144851.png" alt="VS Code notification: Python environment created successfully" width="600">
 6. To verify all's good so far, make sure that in the Explorer pane, you see a new .venv/ folder under the root of our script folder:
-	- ![[imgs/python-script-setup/Pasted image 20250902144928.png|600]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902144928.png" alt="VS Code Explorer showing .venv folder created" width="600">
 
 ### Verify the venv's good-to-go
 Finally, let's open up the integrated terminal inside VS Code to make sure it's using the right environment. Go to View > Terminal or use the hotkey (Ctrl+\` in Windows/Linux, and Cmd+\` on Mac) .
@@ -140,7 +140,7 @@ At line:1 char:3
 If you don't hit any error—sick! Skip down to [[#Verify the venv's ready in Windows]]. 
 
 If you do hit an error like this, to work around it you can launch an instance of Windows Command Prompt instead. In the top-right of the terminal, click the dropdown arrow next to the plus sign, and select Command Prompt:
-![[imgs/python-script-setup/Pasted image 20250902145602.png|300]]
+<img src="imgs/python-script-setup/Pasted image 20250902145602.png" alt="VS Code terminal dropdown showing Command Prompt option" width="300">
 
 (Note: Advanced users can alternatively run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` in PowerShell if they want to keep using it instead of command prompt.)
 #### Verify the venv's ready in Windows 
@@ -190,7 +190,7 @@ yt-dlp "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 
 The result of this should appear in the root folder, visible inside VS Code:
-![[imgs/python-script-setup/Pasted image 20250902151109.png|600]]
+<img src="imgs/python-script-setup/Pasted image 20250902151109.png" alt="Downloaded video file visible in VS Code Explorer" width="600">
 
 We can pass in more "arguments" or "args" to customize how the script runs. Type and run this to see all the options:
 ```
@@ -224,16 +224,16 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 **Step 1: Open the Run and Debug panel**
 - Click the "Run and Debug" icon in the left sidebar of VS Code (looks like a play button with a bug)
 - Or use `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (Mac)
-![[imgs/python-script-setup/Pasted image 20250902160405.png|300]]
+<img src="imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300">
 
 **Step 2: Create launch configuration**
 - Click "create a launch.json file" link
 - VS Code will ask what type of configuration - select "Python Debugger"
-	- ![[imgs/python-script-setup/Pasted image 20250902160429.png|600]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902160429.png" alt="VS Code debugger configuration type selection" width="600">
 - Choose "Python File" from the options
-	- ![[imgs/python-script-setup/Pasted image 20250902160622.png|600]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
 - Note that it creates the file under a new folder, called `.vscode/`
-	- ![[imgs/python-script-setup/Pasted image 20250902160650.png]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902160650.png" alt="VS Code Explorer showing .vscode folder and launch.json file" width="300">
 
 **Step 3: Edit the generated launch.json** 
 VS Code creates a basic file, but we want to customize it. Replace the contents with something like the below. 
@@ -283,10 +283,10 @@ VS Code creates a basic file, but we want to customize it. Replace the contents 
 
 **Step 4: Run your configurations**
 - In the Run and Debug panel, you'll see a dropdown with your configuration names
-	- ![[imgs/python-script-setup/Pasted image 20250902160522.png|150]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902160522.png" alt="VS Code debug configuration dropdown" width="150">
 - Select one and click the green play button
 - For the "Custom URL" option, it'll prompt you to enter a URL
-	- ![[imgs/python-script-setup/Pasted image 20250902160729.png]]
+	- <img src="imgs/python-script-setup/Pasted image 20250902160729.png" alt="VS Code input prompt for custom video URL">
 
 ## What you've accomplished
 Let's review what we've done so you can reference it later.
