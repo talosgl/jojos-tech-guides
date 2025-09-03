@@ -15,6 +15,10 @@ We're going to be using the terminal (also called the command line, console, or 
 ### Goal
 Get from "I found this useful .py script" to "it's running on my computer" with minimal fuss and a sustainable setup for future tools.
 
+(As an added bonus, you can take what you set up & learn here and do your own Python script development in future, but this guide only covers installing and running other folks' scripts.)
+
+---
+
 ## Part 1: Steps to do One-Time per Computer
 You should only need to do the steps in this section should one time on your computer (or per use account).
 
@@ -44,12 +48,18 @@ Go to https://code.visualstudio.com/download and download and install the newest
 
 <img src="imgs/python-script-setup/Pasted image 20250902131142.png" alt="VS Code download page" width="500">
 
+Here are more detailed guides per OS:
+- [Install VS Code on Windows](https://code.visualstudio.com/docs/setup/windows#_install-vs-code-on-windows) - You can stop when you reach the heading "User setup versus system setup." (The default installer will do user setup.)
+- [Install VS Code on macOS](https://code.visualstudio.com/docs/setup/mac#_install-vs-code-on-macos) - You can stop when you reach the heading "Launch VS Code from the command line" (You don't need to do that.)
+- [Install VS Code on Linux](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) - You can stop when you reach the heading "Configure VS Code as the default text editor" (You don't need to do that, unless you want to.)
+
 
 #### What is this, and why am I installing it?
 VS Code is a free and open-source "IDE" or Integrated Development Environment. We're installing it so that we have an easy graphical user interface (GUI) with which we can inspect and run Python scripts safely in their own isolated "virtual environments." (We'll set up virtual environments shortly to keep each script's requirements separate.)
 
 Note: You could accomplish the same things using just the terminal, but VS Code makes the process more visual and user-friendly.
 
+---
 
 ### 3. Launch VS Code & Take a moment to look at the UI
 Launch VS Code on your computer:
@@ -149,7 +159,7 @@ We next want to open this folder as a "workspace" in VS Code.
 ---
 
 ### 3. Set up Virtual Environment ( `venv`) for this specific script
-We're ready to set up a "virtual environment", or [venv](https://docs.python.org/3/library/venv.html),  in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python without needing to worry about what such-and-such script might've done.
+We're ready to set up a "virtual environment", or [venv](https://docs.python.org/3/library/venv.html), in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python without needing to worry about what such-and-such script might've done.
 
 Let's do it. 
 1. In VS Code, open the Command Palette by going to View > Command Palette or using the hotkey:
@@ -167,11 +177,16 @@ Let's do it.
 6. To verify all's good so far, make sure that in the Explorer pane, you see a new .venv/ folder under the root of our script folder:
 	- <img src="imgs/python-script-setup/Pasted image 20250902144928.png" alt="VS Code Explorer showing .venv folder created" width="600">
 
+The steps we just followed are VS Code's way of doing what you might see elsewhere as the following command: 
+```bash
+python -m venv .venv.
+```
+
 ---
 
 ### 4. Verify the venv's good-to-go
 Finally, let's open up the integrated terminal inside VS Code to make sure it's using the right environment. 
-1. Go to View > Terminal or use the hotkey (Ctrl+\` in Windows/Linux, and Cmd+\` on Mac).
+1. Go to View > Terminal or use the hotkey (`Ctrl` + \` (tilde) in Windows/Linux, and `⌃` + \` on Mac).
 
 
 #### (Windows-only) Fix PowerShell integrated terminal issue (if needed)
@@ -210,7 +225,7 @@ Notice how the new-line has (.venv) in front. This means it's using the right en
 ---
 
 ### 5. Download / "install" the Python Script into the venv using pip
-It's time to install our example script, `yt-dlp`! 
+It's time to install our example script, `yt-dlp`!
 
 We're going to use the official Python Package installer, which is called `pip` for some unholy reason. Installable packages can be found on the official site at https://pypi.org/.
 
@@ -264,11 +279,11 @@ yt-dlp "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
 ### Sidequest: Understanding Command Arguments
 We can pass in more "arguments" or "args" to customize how the script runs. Type and run this to see all the options:
-```
+```bash
 yt-dlp --help
 ```
 
-So that you can get a feel for using options and args, let's try one extra arg. `-P` is an option for specifying what folder in which we want the video to download into. If we do `-P my-vids`, yt-dlp will auto-create a folder under our current spot, and put the new video inside it. If you want it to download into your OS's standard "videos" location, you could do:
+So that you can get a feel for using options and args, let's try one extra arg. `-P` is an option for specifying what folder in which we want the video to download into. If we do `-P my-vids`, `yt-dlp` will auto-create a folder under our current spot, and put the new video inside it. If you want it to download into your OS's standard "videos" location, you could do:
 - Windows: `-P %USERPROFILE%\Videos\`
 - Mac: `-P ~/Movies/`
 - Linux: `-P ~/Videos/`
@@ -298,7 +313,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 2. Click the "create a launch.json file" link
 3. VS Code will ask what type of configuration - select "Python Debugger"
 	- <img src="imgs/python-script-setup/Pasted image 20250902160429.png" alt="VS Code debugger configuration type selection" width="600">
-4 .Choose "Python File" from the options
+4. Choose "Python File" from the options
 	- <img src="imgs/python-script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
 5. Note that it creates the file under a new folder, called `.vscode/`, which you can see by swapping back to the Explorer pane
 	- <img src="imgs/python-script-setup/Pasted image 20250902160650.png" alt="VS Code Explorer showing .vscode folder and launch.json file" width="300">
