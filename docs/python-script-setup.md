@@ -3,6 +3,8 @@
 ## Overview
 This is a quick and easy guide to help you get set up to run Python scripts on your computer. We'll cover the steps necessary for Windows 11, macOS, and Linux (via Ubuntu).
 
+Note: If you're viewing this on the web via GitHub's "Code" preview, you can open up an Outline using the outline icon (usually in the top-right).
+
 ### Audience
 Tech-savvy folks who:
 - found a Python script online and want to run it
