@@ -25,46 +25,36 @@ You should only need to do the steps in this section should one time on your com
 ### 1. Install Python
 Go to https://www.python.org/downloads/ and download and install the newest version of Python for your platform.
 
-Windows:
+#### Optional Sidequest: Check and see if Python's already installed 
+If you're already comfortable in the terminal, you can check and see if you've previously installed python before with:
+```bash
+~$ python --version # Windows
+~$ python3 --version # Mac
+```
+If you get a version number back, make sure it's above 3.10.
 
+#### Windows:
 <img src="imgs/python-script-setup/Pasted image 20250902130347.png" alt="Python download page for Windows" width="300">
 
-Mac:
-![[Pasted image 20250903144155.png]]
+Use the default installer settings, along with checking the box for **Add python.exe to PATH**:
 
-![[Pasted image 20250903144140.png]]
-![[Pasted image 20250903144500.png]]
-![[Pasted image 20250903144741.png]]
-![[Pasted image 20250903144809.png]]
-![[Pasted image 20250903144925.png]]
-![[Pasted image 20250903144954.png]]
-![[Pasted image 20250903145026.png]]
-![[Pasted image 20250903145038.png]]
-LINUX:
+<img src="imgs/python-script-setup/Pasted image 20250903132122.png" width="400">
+
+#### Mac:
+<img src="imgs/python-script-setup/Pasted image 20250903144155.png" alt="macOS installer button" width="300"> <img src="imgs/python-script-setup/Pasted image 20250903144140.png" alt="macOS package" width ="300">
+
+1. Step through the installation. 
+2. On the very last screen you may see this message about running some special post-install commands. (I'll be honest, I don't know what this means and I'm not usually a mac user, but I'll walk you through the steps to do what it's saying.)
+	- <img src="imgs/python-script-setup/Pasted image 20250903144500.png" alt="macOS installer message about SSL" width="400">
+3. Go to the finder location for Python 3.13; the installer should have popped it up, and double-click the "**Install Certificates.command"** file:
+	-  <img src="imgs/python-script-setup/Pasted image 20250903144741.png" width="600">
+4. A terminal window should pop up and let you know it's done its thing: 
+	- <img src="imgs/python-script-setup/Pasted image 20250903144809.png" width="400">
+
+#### Linux
 
 {ADD}
 
-
-Use the default installer settings, along with checking the box for **Add python.exe to PATH**:
-<img src="imgs/python-script-setup/Pasted image 20250903132122.png" width="400">
-
-#### Check and see if Python's already installed
-If you feel like you might've installed Python before, and you're comfortable in the terminal, you can check and see if it's already installed with this command:
-```bash
-~$ python --version
-```
-
-If you get something like the below, it's not yet installed, or the PATH isn't set up right:
-```
-Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Apps > Advanced app settings > App execution aliases.
-```
-
-If you get the below, it's already installed so you can skip ahead:
-```
-~$ python --version
-Python 3.13.7
-```
-`python3 --version`
 
 #### What is this, and why am I installing it?
 This installation includes the essential program to read and execute Python code, the Python Core Interpreter. That translates Python code into instructions your computer can understand and act on. The installation also includes other key components we'll need to run a Python script locally, like the Standard Library, the Package Manager (pip), and Runtime Environment system files and configurations that allow Python to run on each operating system.
@@ -92,7 +82,7 @@ Note: You could accomplish the same things using just the terminal, but VS Code 
 ---
 
 ### 3. Launch VS Code & Take a moment to look at the UI
-Now let's launch VS Code. You might have it auto-launch after it finishes installing. If not, here's the standard ways:
+Now let's launch VS Code. It may auto-launch after it finishes installing. If not, here's the standard ways:
 
 - Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
 	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
@@ -146,19 +136,14 @@ You can create this new folder wherever you wish; but here's my suggested spot f
 Create this folder using your operating system's file manager: Navigate to the parent location (c:/, or your home ~/) folder, right-click, and select "New Folder" in Windows/Linux; or, in Mac's Finder, use `Cmd+Shift+N`.
 
 Windows:
-
-<img src="imgs/python-script-setup/Pasted image 20250902131953.png" alt="Windows File Explorer showing C: drive" width="600">
-
-or 
-<img src="imgs/python-script-setup/Pasted image 20250903133609.png" width="300">
-
-<img src="imgs/python-script-setup/Pasted image 20250902141805.png" alt="Creating new folder in Windows" width="600">
+1. <img src="imgs/python-script-setup/Pasted image 20250902131953.png" alt="Windows File Explorer showing C: drive" width="600">
+2. <img src="imgs/python-script-setup/Pasted image 20250902141805.png" alt="Creating new folder in Windows" width="600">
 
 
 
 Mac:
-<img src="imgs/python-script-setup/Pasted image 20250903143215.png" width="300">
-![[Pasted image 20250903143352.png]]
+1. <img src="imgs/python-script-setup/Pasted image 20250903143215.png" width="300">
+2. <img src="Pasted image 20250903143352.png" width="100">
 
 
 Linux:
@@ -175,14 +160,14 @@ To get set up to install our first Python script, let's make a new folder inside
 
 1. Navigate to the py-scripts folder you created earlier.
 	- Windows: `C:\py-scripts\`
- 		- <img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="400">
 	- Mac/Linux: `~/py-scripts/`
-		- ![[Pasted image 20250903143448.png]]
 1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use Cmd+Shift+N (Mac).
 2. Name it after the script you want to install - for our example, use `yt-dlp`
 3. Verify you've got the right folder structure:
 	- Windows: `C:\py-scripts\yt-dlp\`
+		- <img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="400">
 	- Mac/Linux: `~/py-scripts/yt-dlp/`
+		- <img src="imgs/python-script-setup/Pasted image 20250903143448.png" width="200">
 
 This folder will contain everything related to this one script.
 
@@ -194,15 +179,15 @@ We next want to open this folder as a "workspace" in VS Code.
 1. Launch VS Code on your computer again (or maximize it from the tray).
 2. From inside VS Code, go to File > Open Folder:
 	- <img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
- 	- <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
-3. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
-	- Windows:
- 		- <img src="imgs/python-script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="500">
+	- <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
 
-1. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `ps-scripts/` or only per-script.)
-	- ![[imgs/python-script-setup/Pasted image 20250903133609.png|300]]
-![[Pasted image 20250903143554.png]]
-![[Pasted image 20250903143647.png]]
+3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `ps-scripts/` or only per-script.)
+	- <img src="imgs/python-script-setup/Pasted image 20250903133609.png" width="300">
+	- <img src="imgs/python-script-setup/Pasted image 20250903143554.png" width="300">
+4. You may also get a notification from the extensions icon that the app needs to update/restart:
+	 - <img src="imgs/python-script-setup/Pasted image 20250903143647.png" alt="Extensions that need to be updated" width="300">
+5. Alright, now hopefully we're all settled into VS Code. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
+	- <img src="imgs/python-script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="400">
 
 
 ---
@@ -220,7 +205,7 @@ Let's do it.
 	- <img src="imgs/python-script-setup/Pasted image 20250902144651.png" alt="Python environment type selection showing Venv option" width="600">
 4. Select the Global Python interpreter to kick off our venv. If you see multiple options, select the newest one. (Mac and Linux sometimes already have an older version of Python installed; we want to make sure to use the one we just installed!)
 	- <img src="imgs/python-script-setup/Pasted image 20250902144731.png" alt="Python interpreter selection dialog" width="600">
-	- ![[Pasted image 20250903150405.png]]
+	- <img src="imgs/python-script-setup/Pasted image 20250903150405.png" width="600">
 5. VS Code will pop a notification to tell us it's doing the thing, and then that it's finished:
 	- <img src="imgs/python-script-setup/Pasted image 20250902144801.png" alt="VS Code notification: Creating Python environment" width="600">
 	- <img src="imgs/python-script-setup/Pasted image 20250902144851.png" alt="VS Code notification: Python environment created successfully" width="600">
@@ -236,7 +221,8 @@ python -m venv .venv.
 
 ### 4. Verify the venv's good-to-go
 Finally, let's open up the integrated terminal inside VS Code to make sure it's using the right environment. 
-1. Go to View > Terminal or use the hotkey (`Ctrl` + \` (tilde) in Windows/Linux, and `⌃` + \` on Mac). (If you had the terminal open already, you'll need to click the plus sign in the top right to start a new one to ensure it kicks off using our new venv.)
+1. Go to View > Terminal or use the hotkey (`Ctrl` + \` (tilde) in Windows/Linux, and `⌃` + \` on Mac). 
+2. (If you had the terminal open already, you'll need to click the plus sign in the top right to start a new one to ensure it kicks off using our new venv.)
 
 #### (Windows-only) Fix PowerShell integrated terminal issue (if needed)
 If you're on Windows, VS Code may launch PowerShell as your default terminal, which can get ornery about venv environments. This happens because PowerShell's security settings block local scripts by default. You might see an error like this:
@@ -250,7 +236,7 @@ At line:1 char:3
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
 ```
-If you don't hit any error—sick! Skip down to [Verify the venv's ready in Windows](#verify-the-venvs-ready-in-windows).
+If you don't hit any error—sick! Skip down to [Verify the venv's ready in Windows](#verify-the-venvs-ready).
 
 If you do hit an error like this, to work around it you can launch an instance of Windows Command Prompt instead. In the top-right of the terminal, click the dropdown arrow next to the plus sign, and select Command Prompt:
 
@@ -259,20 +245,23 @@ If you do hit an error like this, to work around it you can launch an instance o
 (Note: Advanced users can alternatively run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` in PowerShell if they want to keep using it instead of command prompt.)
 
 
-#### Verify the venv's ready in Windows 
-Now you should see a command prompt terminal, and it should already have run a command to activate the venv; something like this:
+#### Verify the venv's ready
+Now you should see a command prompt terminal, and it should already have run a command to activate the venv; something like this, in windows:
 ```cmd
 C:\py-scripts\yt-dlp>c:/py-scripts/yt-dlp/.venv/Scripts/activate.bat
 (.venv) C:\py-scripts\yt-dlp>
 ```
-Notice how the new-line has (.venv) in front. This means it's using the right environment, our newly made venv. If that didn't work right, you can try re-launching VS Code in this folder. Otherwise, stay in the venv-activated terminal and move on to the next section!
 
+or this on Mac/Linux:
+```bash
+source /Users/your-name/py-scripts/yt-dlp/.venv/bin/activate
+user@user-computer yt-dlp % source /Users/your-name/py-scripts/yt-dlp/.venv/bin/activate
+(.venv) user@user-computer yt-dlp %
+```
 
-#### (TODO) Verify venv's ready on Mac/Linux
-{ADD}
-![[Pasted image 20250903143846.png]]
-If you don't see that, you might've already had a terminal open; try clicking the plus sign to launch a new one and see if that works.
+Notice how the new-line has (.venv) in front. This means it's using the right environment, our newly made venv. If that didn't work right, you can try re-launching VS Code in this folder or starting a new terminal window.
 
+Stay in the venv-activated terminal and move on to the next section!
 
 ---
 
@@ -369,8 +358,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 	- <img src="./imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300"> 
 2. Click the "create a launch.json file" link
 3. VS Code will ask what type of configuration - select "Python Debugger"
-	- <img src="imgs/python-script-setup/Pasted image 20250902160429.png" alt="VS Code debugger configuration type selection" width="600">
-	- ![[Pasted image 20250903150926.png]]
+	- <img src="imgs/python-script-setup/Pasted image 20250903150926.png" width="600">
 4. Choose "Python File" from the options
 	- <img src="imgs/python-script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
 5. Note that it creates the file under a new folder, called `.vscode/`, which you can see by swapping back to the Explorer pane
@@ -428,8 +416,8 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 	- You can tell the "Download Video" one worked if you now have a folder called "downloads" under the yt-dlp folder, and it has Rick's video in it.
 	- For the "Custom URL" option, it'll prompt you to enter a URL, and you can use the same one. For this one, after it runs, you should see a "custom-downloads/" folder with the video in it.
 		- <img src="imgs/python-script-setup/Pasted image 20250902160729.png" alt="VS Code input prompt for custom video URL">
-8. After all our steps, you've got a lot of Rick:
-	- ![[Pasted image 20250903151217.png]]
+8. After all our steps, we've got a lot of Rick:
+	- <img src="imgs/python-script-setup/Pasted image 20250903151217.png" width="300">
 
 Woo, we did it!
 
