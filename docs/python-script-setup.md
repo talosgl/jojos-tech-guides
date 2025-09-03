@@ -25,9 +25,6 @@ Get from "I found this useful .py script" to "it's running on my computer" with 
 ## Part 1: Steps to do One-Time per Computer
 You should only need to do the steps in this section should one time on your computer (or per user account).
 
-### 1. Install Python
-Go to https://www.python.org/downloads/ and download and install the newest version of Python for your platform.
-
 #### Optional Sidequest: Check and see if Python's already installed 
 If you're already comfortable in the terminal, you can check and see if you've previously installed python before with:
 ```bash
@@ -35,6 +32,9 @@ If you're already comfortable in the terminal, you can check and see if you've p
 ~$ python3 --version # Mac & Linux
 ```
 If you get a version number back, make sure it's above 3.10.
+
+### 1. Install Python
+If you are on Mac or Windows, go to https://www.python.org/downloads/ and download and install the newest version of Python for your platform.
 
 #### Windows:
 <img src="imgs/python-script-setup/Pasted image 20250902130347.png" alt="Python download page for Windows" width="300">
@@ -60,12 +60,12 @@ On most Linux distros, Python will already be installed. You can check in the st
 $ python3 --version
 	Python 3.10.12 # hopefully you get something like this back
 ```
+
 If for some reason it's not already installed, the easiest way to install Python will be with your distro's native package manager. For this guide we're using Ubuntu, so that'd be apt (Advanced Package Tool). The commands then would be:
 ```bash
 sudo apt update # get everything else up-to-date first
 sudo apt install python3
 ```
-
 
 #### What is this, and why am I installing it?
 This installation includes the essential program to read and execute Python code, the Python Core Interpreter. That translates Python code into instructions your computer can understand and act on. The installation also includes other key components we'll need to run a Python script locally, like the Standard Library, the Package Manager (pip), and Runtime Environment system files and configurations that allow Python to run on each operating system.
@@ -82,8 +82,8 @@ Here are more detailed guides per OS:
 - [Install VS Code on macOS](https://code.visualstudio.com/docs/setup/mac#_install-vs-code-on-macos) - You can stop when you reach the heading "Launch VS Code from the command line" (You don't need to do that.)
 - [Install VS Code on Linux](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) - You can stop when you reach the heading "Configure VS Code as the default text editor" (You don't need to do that, unless you want to.)
 
-All the default installer settings should be fine, but you can enable the context menu options as well to help future-you out:
-![[imgs/python-script-setup/Pasted image 20250903132646.png|400]]
+On Windows, the default installer settings should be fine, but you can enable the context menu options as well to help future-you out:
+<img src="imgs/python-script-setup/Pasted image 20250903132646.png" width="400">
 
 #### What is this, and why am I installing it?
 VS Code is a free and open-source "IDE" or Integrated Development Environment. We're installing it so that we have an easy graphical user interface (GUI) with which we can inspect and run Python scripts safely in their own isolated "virtual environments." (We'll set up virtual environments shortly to keep each script's requirements separate.)
