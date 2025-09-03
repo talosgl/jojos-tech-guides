@@ -20,7 +20,7 @@ Get from "I found this useful .py script" to "it's running on my computer" with 
 ---
 
 ## Part 1: Steps to do One-Time per Computer
-You should only need to do the steps in this section should one time on your computer (or per use account).
+You should only need to do the steps in this section should one time on your computer (or per user account).
 
 ### 1. Install Python
 Go to https://www.python.org/downloads/ and download and install the newest version of Python for your platform.
@@ -38,6 +38,26 @@ LINUX:
 {ADD}
 
 
+Use the default installer settings, along with checking the box for **Add python.exe to PATH**:
+<img src="imgs/python-script-setup/Pasted image 20250903132122.png" width="400">
+
+#### Check and see if Python's already installed
+If you feel like you might've installed Python before, and you're comfortable in the terminal, you can check and see if it's already installed with this command:
+```bash
+~$ python --version
+```
+
+If you get something like the below, it's not yet installed, or the PATH isn't set up right:
+```
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Apps > Advanced app settings > App execution aliases.
+```
+
+If you get the below, it's already installed so you can skip ahead:
+```
+~$ python --version
+Python 3.13.7
+```
+
 #### What is this, and why am I installing it?
 This installation includes the essential program to read and execute Python code, the Python Core Interpreter. That translates Python code into instructions your computer can understand and act on. The installation also includes other key components we'll need to run a Python script locally, like the Standard Library, the Package Manager (pip), and Runtime Environment system files and configurations that allow Python to run on each operating system.
 
@@ -46,13 +66,15 @@ This installation includes the essential program to read and execute Python code
 ### 2. Install VS Code
 Go to https://code.visualstudio.com/download and download and install the newest version of VS Code for your platform.
 
-<img src="imgs/python-script-setup/Pasted image 20250902131142.png" alt="VS Code download page" width="500">
+<img src="imgs/python-script-setup/Pasted image 20250902131142.png" alt="VS Code download page" width="500" />
 
 Here are more detailed guides per OS:
 - [Install VS Code on Windows](https://code.visualstudio.com/docs/setup/windows#_install-vs-code-on-windows) - You can stop when you reach the heading "User setup versus system setup." (The default installer will do user setup.)
 - [Install VS Code on macOS](https://code.visualstudio.com/docs/setup/mac#_install-vs-code-on-macos) - You can stop when you reach the heading "Launch VS Code from the command line" (You don't need to do that.)
 - [Install VS Code on Linux](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) - You can stop when you reach the heading "Configure VS Code as the default text editor" (You don't need to do that, unless you want to.)
 
+All the default installer settings should be fine, but you can enable the context menu options as well to help future-you out:
+![[imgs/python-script-setup/Pasted image 20250903132646.png|400]]
 
 #### What is this, and why am I installing it?
 VS Code is a free and open-source "IDE" or Integrated Development Environment. We're installing it so that we have an easy graphical user interface (GUI) with which we can inspect and run Python scripts safely in their own isolated "virtual environments." (We'll set up virtual environments shortly to keep each script's requirements separate.)
@@ -62,7 +84,7 @@ Note: You could accomplish the same things using just the terminal, but VS Code 
 ---
 
 ### 3. Launch VS Code & Take a moment to look at the UI
-Launch VS Code on your computer:
+Now let's launch VS Code. You might have it auto-launch after it finishes installing. If not, here's the standard ways:
 
 - Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
 	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
@@ -71,24 +93,34 @@ Launch VS Code on your computer:
 - Linux:
 	- {ADD}
 
+If it's your first time launching VS Code, you may get a tutorial window. If you like, you can step through it, but we're going to skip it. Once you're ready to move on in this guide, just close that tab with the X:
+
+<img src="imgs/python-script-setup/Pasted image 20250903132904.png" width="200">
+
+
 Let's take a quick tour of the UI and what I'll be calling different parts of it throughout the rest of the guide. Don't worry about if your UI doesn't match the screenshots at the moment (it probably doesn't), and don't worry about understanding the descriptions right now; they're there for your future reference.
 
 1. **Explorer** pane (file tree) - where we'll see the folder structure per-script
 2. **Editor** area - where files open
 3. **Integrated Terminal** - where we'll run commands
 4. **Run and Debug** panel - for the advanced script launcher
+5. **Extensions** - where you install additional plugins for added functionality
 
 <img src="imgs/python-script-setup/Pasted image 20250902160012.png" alt="VS Code UI overview showing main panels" width="600">
 
-<img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="600">
+<img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="300">
+
+<img src="imgs/python-script-setup/Pasted image 20250903134955.png" width="300">
 
 ---
 
 ### 4. Install VS Code's Python Extension
 { TODO: ADD SCREENCAPS }
 1. Click the Extensions icon in the left sidebar (looks like four squares)
+	- <img src="imgs/python-script-setup/Pasted image 20250903133001.png" width="200">
 2. Search for "Python" and install the one by Microsoft
-3. You'll see VS Code detect Python and offer to select an interpreter
+	-  <img src="imgs/python-script-setup/Pasted image 20250903133052.png" width="600">
+3. Once that's finished, you can minimize VS Code for now.
 
 ---
 
@@ -107,7 +139,11 @@ Windows:
 
 <img src="imgs/python-script-setup/Pasted image 20250902131953.png" alt="Windows File Explorer showing C: drive" width="600">
 
+or 
+<img src="imgs/python-script-setup/Pasted image 20250903133609.png" width="300">
+
 <img src="imgs/python-script-setup/Pasted image 20250902141805.png" alt="Creating new folder in Windows" width="600">
+
 
 
 Mac:
@@ -144,17 +180,20 @@ This folder will contain everything related to this one script.
 ### 2. Open new script folder in VS Code
 We next want to open this folder as a "workspace" in VS Code.
 
-1. Launch VS Code on your computer again.
+1. Launch VS Code on your computer again (or maximize it from the tray).
 2. From inside VS Code, go to File > Open Folder:
 	- <img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
  	- <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
 3. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
 	- Windows:
  		- <img src="imgs/python-script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="500">
-  	- Mac:
+	- Mac:
     	- {ADD}
 	- Linux:
-     	- {ADD}
+		- {ADD}
+
+4. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `ps-scripts/` or only per-script.)
+	- ![[imgs/python-script-setup/Pasted image 20250903133609.png|300]]
 
 ---
 
@@ -309,7 +348,7 @@ yt-dlp -P small-files -f "worst[height>=360]" "https://www.youtube.com/watch?v=d
 If you're going to run a script a lot and you want to use a more UI-friendly interface rather than the terminal, you can us the VS Code debugger and set up a `launch.json`. This is particularly nice if you've got specific arguments you want to run every time, and you want to customize them sometimes.
 
 1. Click the "Run and Debug" icon in the left sidebar of VS Code (looks like a play button with a bug) (or use `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (Mac))
-	- <img src="imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300">
+	- <img src="./imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300"> 
 2. Click the "create a launch.json file" link
 3. VS Code will ask what type of configuration - select "Python Debugger"
 	- <img src="imgs/python-script-setup/Pasted image 20250902160429.png" alt="VS Code debugger configuration type selection" width="600">
@@ -387,7 +426,6 @@ Let's review what we've done so you can reference it later.
 
 
 ## Other Useful Python Scripts you can check out and install with pip
-- [yt-dlp](https://pypi.org/project/yt-dlp/)
 - [gallery-dl](https://pypi.org/project/gallery-dl/)
 - [csvkit](https://pypi.org/project/csvkit/)
 - [internetarchive cli tool `ia`](https://pypi.org/project/internetarchive/)
@@ -396,5 +434,5 @@ Let's review what we've done so you can reference it later.
 ---
 
 ## Further Reading
-- [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_creating-environments) - official VS Code documentation on using virtual environments
-- [Learning Resources](learning-resources.md) - links I've collected to other helpful (external) tutorials and guides
+- [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_creating-environments) - Official VS Code documentation on using virtual environments
+- [Learning Resources](learning-resources.md) - Links I've collected to other helpful (external) tutorials and guides
