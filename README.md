@@ -9,4 +9,12 @@ Practical development environment and workflow guides. We try very hard not to m
 - More practical workflow guides
 
 ## Contributing
-Found an issue or have suggestions? Open an issue or submit a pull request.
+### Quick fixes
+For typos or small edits, just click the edit button on any page and submit a pull request.
+
+### Larger changes  
+1. Fork the repo
+2. Make your changes
+3. Submit a pull request with a description of what you changed and why
+
+Questions? Open an issue first to discuss bigger changes.
