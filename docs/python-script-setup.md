@@ -2,6 +2,7 @@
 
 ## Overview
 This is a quick and easy guide to help you get set up to run Python scripts on your computer. We'll cover the steps necessary for Windows 11, macOS, and Linux (via Ubuntu).
+
 ### Audience
 Tech-savvy folks who:
 - found a Python script online and want to run it
@@ -9,7 +10,7 @@ Tech-savvy folks who:
 - are comfortable with basic computer tasks
 - want to get something working quickly (no coding required)
 
-We're going to be using the terminal (also called the command line, console, or shell), but it's completely fine if you're not used to doing that; you don't need existing experience.
+We're going to be using the terminal (also called the command line, console, or shell), but it's completely fine if you're not used to doing that; you don't need existing experience. (Except if you're on Linux; sorry, some existing terminal experience will be useful for y'all.)
 
 ### Goal
 Get from "I found this useful .py script" to "it's running on my computer" with minimal fuss and a sustainable setup for future tools.
@@ -54,8 +55,16 @@ Use the default installer settings, along with checking the box for **Add python
 	- <img src="imgs/python-script-setup/Pasted image 20250903144809.png" width="400">
 
 #### Linux
-
-{ADD}
+On most Linux distros, Python will already be installed. You can check in the standard terminal with the command:
+```bash
+$ python3 --version
+	Python 3.10.12 # hopefully you get something like this back
+```
+If for some reason it's not already installed, the easiest way to install Python will be with your distro's native package manager. For this guide we're using Ubuntu, so that'd be apt (Advanced Package Tool). The commands then would be:
+```bash
+sudo apt update # get everything else up-to-date first
+sudo apt install python3
+```
 
 
 #### What is this, and why am I installing it?
