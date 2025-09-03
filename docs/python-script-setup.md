@@ -31,7 +31,7 @@ Go to https://www.python.org/downloads/ and download and install the newest vers
 If you're already comfortable in the terminal, you can check and see if you've previously installed python before with:
 ```bash
 ~$ python --version # Windows
-~$ python3 --version # Mac
+~$ python3 --version # Mac & Linux
 ```
 If you get a version number back, make sure it's above 3.10.
 
