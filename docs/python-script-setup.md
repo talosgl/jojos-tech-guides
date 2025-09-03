@@ -50,9 +50,39 @@ VS Code is a free and open-source "IDE" or Integrated Development Environment. W
 
 Note: You could accomplish the same things using just the terminal, but VS Code makes the process more visual and user-friendly.
 
+
+### 3. Launch VS Code & Take a moment to look at the UI
+Launch VS Code on your computer:
+
+- Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
+	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
+- Mac:
+	- {ADD}
+- Linux:
+	- {ADD}
+
+Let's take a quick tour of the UI and what I'll be calling different parts of it throughout the rest of the guide. Don't worry about if your UI doesn't match the screenshots at the moment (it probably doesn't), and don't worry about understanding the descriptions right now; they're there for your future reference.
+
+1. **Explorer** pane (file tree) - where we'll see the folder structure per-script
+2. **Editor** area - where files open
+3. **Integrated Terminal** - where we'll run commands
+4. **Run and Debug** panel - for the advanced script launcher
+
+<img src="imgs/python-script-setup/Pasted image 20250902160012.png" alt="VS Code UI overview showing main panels" width="600">
+
+<img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="600">
+
 ---
 
-### 3. Get Folder Structure Ready
+### 4. Install VS Code's Python Extension
+{ TODO: ADD SCREENCAPS }
+1. Click the Extensions icon in the left sidebar (looks like four squares)
+2. Search for "Python" and install the one by Microsoft
+3. You'll see VS Code detect Python and offer to select an interpreter
+
+---
+
+### 5. Get Folder Structure Ready
 Now that we've got the necessary software installed, let's create a specific folder for housing Python scripts we want to install. 
 
 Think of this as a folder similar to `c:\Program Files\` in Windows, `/Applications/` in Mac, or `/usr/local/bin/` in Linux, except we're setting this one up specifically to store Python scripts and what we need to run them.
@@ -104,13 +134,7 @@ This folder will contain everything related to this one script.
 ### 2. Open new script folder in VS Code
 We next want to open this folder as a "workspace" in VS Code.
 
-1. Launch VS Code on the computer:
-	- Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
-		- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
-	- Mac:
- 		- {ADD}
-	- Linux:
- 		- {ADD}     
+1. Launch VS Code on your computer again.
 2. From inside VS Code, go to File > Open Folder:
 	- <img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
  	- <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
@@ -124,20 +148,7 @@ We next want to open this folder as a "workspace" in VS Code.
 
 ---
 
-### 3. Take a moment to look at VS Code's UI
-Here's a quick tour of the UI and what I'll be calling different parts of it throughout the rest of the guide. Don't worry about if your UI doesn't match the screenshots at the moment (it probably doesn't), and don't worry about understanding the descriptions right now; they're there for your future reference.
-1. **Explorer** pane (file tree) - where we'll see the folder structure per-script
-2. **Editor** area - where files open
-3. **Integrated Terminal** - where we'll run commands
-4. **Run and Debug** panel - for the advanced script launcher
-
-<img src="imgs/python-script-setup/Pasted image 20250902160012.png" alt="VS Code UI overview showing main panels" width="600">
-
-<img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="600">
-
----
-
-### 4. Set up Virtual Environment ( `venv`) for this specific script
+### 3. Set up Virtual Environment ( `venv`) for this specific script
 We're ready to set up a "virtual environment", or [venv](https://docs.python.org/3/library/venv.html),  in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python without needing to worry about what such-and-such script might've done.
 
 Let's do it. 
@@ -158,7 +169,7 @@ Let's do it.
 
 ---
 
-### 5. Verify the venv's good-to-go
+### 4. Verify the venv's good-to-go
 Finally, let's open up the integrated terminal inside VS Code to make sure it's using the right environment. 
 1. Go to View > Terminal or use the hotkey (Ctrl+\` in Windows/Linux, and Cmd+\` on Mac).
 
@@ -198,7 +209,7 @@ Notice how the new-line has (.venv) in front. This means it's using the right en
 
 ---
 
-### 6. Download / "install" the Python Script into the venv using pip
+### 5. Download / "install" the Python Script into the venv using pip
 It's time to install our example script, `yt-dlp`! 
 
 We're going to use the official Python Package installer, which is called `pip` for some unholy reason. Installable packages can be found on the official site at https://pypi.org/.
