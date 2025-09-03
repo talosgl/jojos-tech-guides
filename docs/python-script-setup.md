@@ -44,7 +44,7 @@ Use the default installer settings, along with checking the box for **Add python
 <img src="imgs/python-script-setup/Pasted image 20250903144155.png" alt="macOS installer button" width="300"> <img src="imgs/python-script-setup/Pasted image 20250903144140.png" alt="macOS package" width ="300">
 
 1. Step through the installation. 
-2. On the very last screen you may see this message about running some special post-install commands. (I'll be honest, I don't know what this means and I'm not usually a mac user, but I'll walk you through the steps to do what it's saying.)
+2. On the very last screen you may see this message about running some special post-install commands. (I'll be honest, I don't know what this means, but I'll walk you through the steps to do what it's saying so we don't hit issues with pip later.)
 	- <img src="imgs/python-script-setup/Pasted image 20250903144500.png" alt="macOS installer message about SSL" width="400">
 3. Go to the finder location for Python 3.13; the installer should have popped it up, and double-click the "**Install Certificates.command"** file:
 	-  <img src="imgs/python-script-setup/Pasted image 20250903144741.png" width="600">
@@ -87,7 +87,7 @@ Now let's launch VS Code. It may auto-launch after it finishes installing. If no
 - Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
 	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
 - Mac: Launch from **Launchpad** > **Visual Studio Code**, or press `Cmd+Spacebar` and type "Visual Studio Code" to find it
-	- <img src="docs/imgs/python-script-setup/Screenshot 2025-09-03 at 2.20.46 PM.png" alt="Launching VS Code from macOS Launchpad" width="300">
+	- <img src="imgs/python-script-setup/Screenshot 2025-09-03 at 2.20.46 PM.png" alt="Launching VS Code from macOS Launchpad" width="300">
 	- <img src="imgs/python-script-setup/Screenshot 2025-09-03 at 2.25.51 PM.png" width="400">
 	- (If you followed the VS Code guide to install it on macOS, recall this step:
 		- "Drag `Visual Studio Code.app` to the **Applications** folder, making it available in the macOS Launchpad.")
@@ -355,7 +355,7 @@ yt-dlp -P small-files -f "worst[height>=360]" "https://www.youtube.com/watch?v=d
 If you're going to run a script a lot and you want to use a more UI-friendly interface rather than the terminal, you can us the VS Code debugger and set up a `launch.json`. This is particularly nice if you've got specific arguments you want to run every time, and you want to customize them sometimes.
 
 1. Click the "Run and Debug" icon in the left sidebar of VS Code (looks like a play button with a bug) (or use `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (Mac))
-	- <img src="./imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300"> 
+	- <img src="imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300"> 
 2. Click the "create a launch.json file" link
 3. VS Code will ask what type of configuration - select "Python Debugger"
 	- <img src="imgs/python-script-setup/Pasted image 20250903150926.png" width="600">
