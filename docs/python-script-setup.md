@@ -371,4 +371,4 @@ Let's review what we've done so you can reference it later.
 
 ## Further Reading
 - [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_creating-environments) - official VS Code documentation on using virtual environments
-- [Learning Resources]([[learning-resources]]) - links I've collected to other helpful (external) tutorials and guides
+- [Learning Resources](learning-resources.md) - links I've collected to other helpful (external) tutorials and guides
