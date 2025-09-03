@@ -15,32 +15,44 @@ We're going to be using the terminal (also called the command line, console, or 
 ### Goal
 Get from "I found this useful .py script" to "it's running on my computer" with minimal fuss and a sustainable setup for future tools.
 
-## One-Time per Computer Steps: 
-### Install Python
+## Part 1: Steps to do One-Time per Computer
+You should only need to do the steps in this section should one time on your computer (or per use account).
+
+### 1. Install Python
 Go to https://www.python.org/downloads/ and download and install the newest version of Python for your platform.
 
 Windows:
-<img src="imgs/python-script-setup/Pasted image 20250902130347.png" alt="Python download page for Windows" width="500">
+
+<img src="imgs/python-script-setup/Pasted image 20250902130347.png" alt="Python download page for Windows" width="300">
 
 Mac:
+
 {ADD}
 
 LINUX:
+
 {ADD}
+
 
 #### What is this, and why am I installing it?
 This installation includes the essential program to read and execute Python code, the Python Core Interpreter. That translates Python code into instructions your computer can understand and act on. The installation also includes other key components we'll need to run a Python script locally, like the Standard Library, the Package Manager (pip), and Runtime Environment system files and configurations that allow Python to run on each operating system.
 
-### Install VS Code
+---
+
+### 2. Install VS Code
 Go to https://code.visualstudio.com/download and download and install the newest version of VS Code for your platform.
 
 <img src="imgs/python-script-setup/Pasted image 20250902131142.png" alt="VS Code download page" width="500">
+
 
 #### What is this, and why am I installing it?
 VS Code is a free and open-source "IDE" or Integrated Development Environment. We're installing it so that we have an easy graphical user interface (GUI) with which we can inspect and run Python scripts safely in their own isolated "virtual environments." (We'll set up virtual environments shortly to keep each script's requirements separate.)
 
 Note: You could accomplish the same things using just the terminal, but VS Code makes the process more visual and user-friendly.
-### Get Folder Structure Ready
+
+---
+
+### 3. Get Folder Structure Ready
 Now that we've got the necessary software installed, let's create a specific folder for housing Python scripts we want to install. 
 
 Think of this as a folder similar to `c:\Program Files\` in Windows, `/Applications/` in Mac, or `/usr/local/bin/` in Linux, except we're setting this one up specifically to store Python scripts and what we need to run them.
@@ -49,56 +61,70 @@ You can create this new folder wherever you wish; but here's my suggested spot f
 - In Windows: `C:\py-scripts\`
 - Mac/Linux: `~/py-scripts/`
 
-Create this folder using your operating system's file manager: navigate to the folder, right-click, and select "New Folder" in Windows/Linux; or, in Mac's Finder, use `Cmd+Shift+N`.
+Create this folder using your operating system's file manager: Navigate to the folder, right-click, and select "New Folder" in Windows/Linux; or, in Mac's Finder, use `Cmd+Shift+N`.
 
 Windows:
+
 <img src="imgs/python-script-setup/Pasted image 20250902131953.png" alt="Windows File Explorer showing C: drive" width="600">
 
 <img src="imgs/python-script-setup/Pasted image 20250902141805.png" alt="Creating new folder in Windows" width="600">
 
-Mac:
-{ADD}
-
-Linux:
-{ADD}
-
-## Steps per new Python Script
-### Create a Folder for a new script
-To get set up to install our first Python Script, let's make a new folder inside the one we just made. For our example we're going to install `yt-dlp`, so let's create a folder with that name:
-
-<img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="600"> 
-
-### Open new script folder in VS Code
-We next want to open this folder as a "workspace" in VS Code. 
-
-Windows: 
-- Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
-	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
 
 Mac:
+
 {ADD}
+
 
 Linux:
+
 {ADD}
 
-From inside VS Code, go to File > Open Folder:
+---
 
-<img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
+## Part 2: Steps to do per new Python Script
+The steps in this section will need to be repeated for each different Python script you want to install and run. We'll go into a little more depth here so you get an idea of why you are doing what you're doing; my hope is that'll help you re-apply them later to future scripts!
 
-<img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
+### 1. Create a Folder for the Python script we'll install
+To get set up to install our first Python script, let's make a new folder inside the one we just made. For our example we're going to install `yt-dlp`, so let's create a folder with that name.
 
-You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
+1. Navigate to the py-scripts folder you created earlier.
+	- Windows: `C:\py-scripts\`
+ 		- <img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="400">
+	- Mac/Linux: `~/py-scripts/`
+2. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use Cmd+Shift+N (Mac).
+3. Name it after the script you want to install - for our example, use `yt-dlp`
+4. Verify you've got the right folder structure:
+	- Windows: `C:\py-scripts\yt-dlp\`
+	- Mac/Linux: `~/py-scripts/yt-dlp/`
 
-<img src="imgs/python-script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="500">
+This folder will contain everything related to this one script.
 
-Mac:
-{ADD}
+---
 
-Linux:
-{ADD}
+### 2. Open new script folder in VS Code
+We next want to open this folder as a "workspace" in VS Code.
 
-### Take a moment to look at VS Code's UI
-{ ADD, with pictures }
+1. Launch VS Code on the computer:
+	- Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
+		- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
+	- Mac:
+ 		- {ADD}
+	- Linux:
+ 		- {ADD}     
+2. From inside VS Code, go to File > Open Folder:
+	- <img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
+ 	- <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
+3. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
+	- Windows:
+ 		- <img src="imgs/python-script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="500">
+  	- Mac:
+    	- {ADD}
+	- Linux:
+     	- {ADD}
+
+---
+
+### 3. Take a moment to look at VS Code's UI
 Here's a quick tour of the UI and what I'll be calling different parts of it throughout the rest of the guide. Don't worry about if your UI doesn't match the screenshots at the moment (it probably doesn't), and don't worry about understanding the descriptions right now; they're there for your future reference.
 1. **Explorer** pane (file tree) - where we'll see the folder structure per-script
 2. **Editor** area - where files open
@@ -109,14 +135,16 @@ Here's a quick tour of the UI and what I'll be calling different parts of it thr
 
 <img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="600">
 
-### Set up Virtual Environment ( `venv`) for this specific script
+---
+
+### 4. Set up Virtual Environment ( `venv`) for this specific script
 We're ready to set up a "virtual environment", or [venv](https://docs.python.org/3/library/venv.html),  in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python without needing to worry about what such-and-such script might've done.
 
 Let's do it. 
 1. In VS Code, open the Command Palette by going to View > Command Palette or using the hotkey:
 	- Windows/Linux: CTRL+SHIFT+P
 	- Mac: CMD+SHIFT+P
-2. Start typing "Python: Create Enviornment" and then select it from the list:
+2. Start typing "Python: Create Environment" and then select it from the list:
 	- <img src="imgs/python-script-setup/Pasted image 20250902144605.png" alt="VS Code Command Palette showing Python Create Environment option" width="600">
 3. Select Venv from the options:
 	- <img src="imgs/python-script-setup/Pasted image 20250902144651.png" alt="Python environment type selection showing Venv option" width="600">
@@ -128,8 +156,12 @@ Let's do it.
 6. To verify all's good so far, make sure that in the Explorer pane, you see a new .venv/ folder under the root of our script folder:
 	- <img src="imgs/python-script-setup/Pasted image 20250902144928.png" alt="VS Code Explorer showing .venv folder created" width="600">
 
-### Verify the venv's good-to-go
-Finally, let's open up the integrated terminal inside VS Code to make sure it's using the right environment. Go to View > Terminal or use the hotkey (Ctrl+\` in Windows/Linux, and Cmd+\` on Mac) .
+---
+
+### 5. Verify the venv's good-to-go
+Finally, let's open up the integrated terminal inside VS Code to make sure it's using the right environment. 
+1. Go to View > Terminal or use the hotkey (Ctrl+\` in Windows/Linux, and Cmd+\` on Mac).
+
 
 #### (Windows-only) Fix PowerShell integrated terminal issue (if needed)
 If you're on Windows, VS Code may launch PowerShell as your default terminal, which can get ornery about venv environments. This happens because PowerShell's security settings block local scripts by default. You might see an error like this:
@@ -143,12 +175,15 @@ At line:1 char:3
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
 ```
-If you don't hit any error—sick! Skip down to [[#Verify the venv's ready in Windows]]. 
+If you don't hit any error—sick! Skip down to [Verify the venv's ready in Windows](#verify-the-venvs-ready-in-windows).
 
 If you do hit an error like this, to work around it you can launch an instance of Windows Command Prompt instead. In the top-right of the terminal, click the dropdown arrow next to the plus sign, and select Command Prompt:
+
 <img src="imgs/python-script-setup/Pasted image 20250902145602.png" alt="VS Code terminal dropdown showing Command Prompt option" width="300">
 
 (Note: Advanced users can alternatively run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` in PowerShell if they want to keep using it instead of command prompt.)
+
+
 #### Verify the venv's ready in Windows 
 Now you should see a command prompt terminal, and it should already have run a command to activate the venv; something like this:
 ```cmd
@@ -157,16 +192,22 @@ C:\py-scripts\yt-dlp>c:/py-scripts/yt-dlp/.venv/Scripts/activate.bat
 ```
 Notice how the new-line has (.venv) in front. This means it's using the right environment, our newly made venv. If that didn't work right, you can try re-launching VS Code in this folder. Otherwise, stay in the venv-activated terminal and move on to the next section!
 
+
 #### (TODO) Verify venv's ready on Mac/Linux
 {ADD}
 
-### Download / "install" the Python Script into the venv
-It's time to install our example script, `yt-dlp`!
+---
 
-Type the following into the terminal on a new line:
-`pip install yt-dlp`
+### 6. Download / "install" the Python Script into the venv using pip
+It's time to install our example script, `yt-dlp`! 
 
-You should see something like...
+We're going to use the official Python Package installer, which is called `pip` for some unholy reason. Installable packages can be found on the official site at https://pypi.org/.
+
+You can read about yt-dlp on the pip site at https://pypi.org/project/yt-dlp/ or you can check out its open source repository at https://github.com/yt-dlp/yt-dlp.
+
+Steps:
+1. Type the following into the terminal on a new line: `pip install yt-dlp`
+2. You should see something like...
 ```
 (.venv) C:\py-scripts\yt-dlp>pip install yt-dlp
 Collecting yt-dlp
@@ -183,27 +224,40 @@ Successfully installed yt-dlp-20##.##.##
 - clone the repo files locally from GitHub or GitLab
 - use curl to download binaries
 
-### Run the script from the venv inside vs code
-Now we're ready to run the script. I'm going to walk you through a couple of methods here, from "most barebones" to "most fancy/complicated"
+---
 
-#### Barebones: Run the script with command line arguments directly from the VS Code Integrated Terminal
-Let's start with the most straightforward approach - running commands directly in the terminal.
+## Part 3: Steps to run the script from the venv inside VS Code
+Now we're ready to run the script. Let's walk through a couple methods here, from "most barebones" to "most fancy/complicated."
 
-Simplest run:
+### Barebones Method: Terminal Commands
+Let's start with the most straightforward approach - running the script directly from the terminal.
+
+1. Copy the following command in your usual way (`Ctrl+C` or `Cmd+C`).
 ```bash
 yt-dlp "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
+2. Pasting into terminals is sort of annoying. You can't really use `Ctrl/Cmd+C` and `Ctrl/Cmd+V` like we're used to. To get around this, you could type the entire command out (don't subject yourself to that!), or you could:
+	- Windows Command Prompt: Right-click inside the terminal window to paste, or use `Ctrl+Shift+V`
+ 	- Windows PowerShell: Right-click inside the terminal window to paste, or use `Ctrl+V` (newer versions)
+  	- Mac Terminal: `Cmd+V` to paste
+	- Linux Terminal: `Ctrl+Shift+V` to paste
+3. Press enter if needed to get to a new line, and...
+4. ...watch yt-dlp do its thing:
+```bash
+(.venv) C:\py-scripts\yt-dlp>yt-dlp "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ 
+[youtube] dQw4w9WgXcQ: Downloading webpage ...
+```
+4. Find the result of our download in the script's root folder, visible inside VS Code:
+	- <img src="imgs/python-script-setup/Pasted image 20250902151109.png" alt="Downloaded video file visible in VS Code Explorer" width="600">
 
-
-The result of this should appear in the root folder, visible inside VS Code:
-<img src="imgs/python-script-setup/Pasted image 20250902151109.png" alt="Downloaded video file visible in VS Code Explorer" width="600">
-
+### Sidequest: Understanding Command Arguments
 We can pass in more "arguments" or "args" to customize how the script runs. Type and run this to see all the options:
 ```
 yt-dlp --help
 ```
 
-So that you can get a feel for some examples, let's try one extra arg. `-P` is an option for specifying what folder in which we want the video to download into. If we do `-P my-vids`, it'll auto-create a folder under our current spot, and put the new video inside it. If you want it to download into your OS's standard "videos" location, you could do:
+So that you can get a feel for using options and args, let's try one extra arg. `-P` is an option for specifying what folder in which we want the video to download into. If we do `-P my-vids`, yt-dlp will auto-create a folder under our current spot, and put the new video inside it. If you want it to download into your OS's standard "videos" location, you could do:
 - Windows: `-P %USERPROFILE%\Videos\`
 - Mac: `-P ~/Movies/`
 - Linux: `-P ~/Videos/`
@@ -224,26 +278,22 @@ yt-dlp --print "%(title)s by %(uploader)s - %(duration_string)s" "https://www.yo
 # download a low quality version
 yt-dlp -P small-files -f "worst[height>=360]" "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
-#### Fancy/Complicated: Run the script with VS Code's debugging launcher 
+
+### Advanced Method: VS Code Debugger
 If you're going to run a script a lot and you want to use a more UI-friendly interface rather than the terminal, you can us the VS Code debugger and set up a `launch.json`. This is particularly nice if you've got specific arguments you want to run every time, and you want to customize them sometimes.
 
-**Step 1: Open the Run and Debug panel**
-- Click the "Run and Debug" icon in the left sidebar of VS Code (looks like a play button with a bug)
-- Or use `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (Mac)
-- <img src="imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300">
-
-**Step 2: Create launch configuration**
-- Click "create a launch.json file" link
-- VS Code will ask what type of configuration - select "Python Debugger"
+1. Click the "Run and Debug" icon in the left sidebar of VS Code (looks like a play button with a bug) (or use `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (Mac))
+	- <img src="imgs/python-script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300">
+2. Click the "create a launch.json file" link
+3. VS Code will ask what type of configuration - select "Python Debugger"
 	- <img src="imgs/python-script-setup/Pasted image 20250902160429.png" alt="VS Code debugger configuration type selection" width="600">
-- Choose "Python File" from the options
+4 .Choose "Python File" from the options
 	- <img src="imgs/python-script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
-- Note that it creates the file under a new folder, called `.vscode/`
+5. Note that it creates the file under a new folder, called `.vscode/`, which you can see by swapping back to the Explorer pane
 	- <img src="imgs/python-script-setup/Pasted image 20250902160650.png" alt="VS Code Explorer showing .vscode folder and launch.json file" width="300">
-
-**Step 3: Edit the generated launch.json** 
-VS Code creates a basic file, but we want to customize it. Replace the contents with something like the below. 
-(NOTE: text starting with `//` are comments, there to explain what the line is doing in our example, which are allowed in VS Code's launch.json but not in normal JSON.)
+6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it. Replace the contents with something like the below. 
+	- (NOTE: text starting with `//` are comments, there to explain what the line is doing in our example, which are allowed in VS Code's launch.json but not in normal JSON.)
+ 
 ```json
 {
     // Use IntelliSense to learn about possible attributes.
@@ -287,12 +337,16 @@ VS Code creates a basic file, but we want to customize it. Replace the contents 
 }
 ```
 
-**Step 4: Run your configurations**
-- In the Run and Debug panel, you'll see a dropdown with your configuration names
-	- <img src="imgs/python-script-setup/Pasted image 20250902160522.png" alt="VS Code debug configuration dropdown" width="150">
-- Select one and click the green play button
-- For the "Custom URL" option, it'll prompt you to enter a URL
-	- <img src="imgs/python-script-setup/Pasted image 20250902160729.png" alt="VS Code input prompt for custom video URL">
+7. Run your configurations
+	- In the Run and Debug panel, you'll see a dropdown with your configuration names
+		- <img src="imgs/python-script-setup/Pasted image 20250902160522.png" alt="VS Code debug configuration dropdown" width="150">
+	- Select one and click the green play button
+	- For the "Custom URL" option, it'll prompt you to enter a URL
+		- <img src="imgs/python-script-setup/Pasted image 20250902160729.png" alt="VS Code input prompt for custom video URL">
+
+Woo, we did it!
+
+---
 
 ## What you've accomplished
 Let's review what we've done so you can reference it later.
@@ -303,12 +357,18 @@ Let's review what we've done so you can reference it later.
 - Created a virtual environment (`venv`) for clean package management
 - Successfully ran your first script in its isolated environment
 
+---
+
+
+## Other Useful Python Scripts you can check out and install with pip
+- [yt-dlp](https://pypi.org/project/yt-dlp/)
+- [gallery-dl](https://pypi.org/project/gallery-dl/)
+- [csvkit](https://pypi.org/project/csvkit/)
+- [internetarchive cli tool `ia`](https://pypi.org/project/internetarchive/)
+
+
+---
+
 ## Further Reading
 - [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_creating-environments) - official VS Code documentation on using virtual environments
 - [Learning Resources]([[learning-resources]]) - links I've collected to other helpful (external) tutorials and guides
-### Other Useful Python Scripts
-#TODO change to the pip pages with repo as secondary link
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- [gallery-dl](https://github.com/mikf/gallery-dl)
-- [csvkit](https://csvkit.readthedocs.io/en/latest/)
-- [internetarchive cli tool `ia`](https://archive.org/developers/internetarchive/cli.html)
