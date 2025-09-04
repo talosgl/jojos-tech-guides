@@ -28,8 +28,8 @@ You should only need to do the steps in this section should one time on your com
 #### Optional Sidequest: Check and see if Python's already installed 
 If you're already comfortable in the terminal, you can check and see if you've previously installed python before with:
 ```bash
-~$ python --version # Windows
-~$ python3 --version # Mac & Linux
+python --version # Windows
+python3 --version # Mac & Linux
 ```
 If you get a version number back, make sure it's above 3.10.
 
