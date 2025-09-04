@@ -17,7 +17,7 @@ Get from "I found this useful .py script" to "it's running on my computer" with 
 
 ### Notes
 1. If you're viewing this on the web via GitHub's "Code" preview, you can open up an Outline using the outline icon (usually in the top-right).
-	-  <img src="imgs/Pasted image 20250903160236.png" alt="gh outline note" width="100">
+	-  <img src="imgs/python-script-setup/Pasted image 20250903160236.png" alt="gh outline note" width="100">
 2. As an added bonus, you can take what you set up & learn here and do your own Python script development in future, but this guide only covers installing and running other folks' scripts.
 
 ---
@@ -103,11 +103,11 @@ Now let's launch VS Code. It may auto-launch after it finishes installing. If no
 	- (If you followed the VS Code guide to install it on macOS, recall this step:
 		- "Drag `Visual Studio Code.app` to the **Applications** folder, making it available in the macOS Launchpad.")
 - Linux:
-	- {ADD}
+	- In Ubuntu, launch vs code from the Activities interface: see [Start applications](https://help.ubuntu.com/stable/ubuntu-help/shell-apps-open.html.en).
 
 If it's your first time launching VS Code, you may get a tutorial window. If you like, you can step through it, but we're going to skip it. Once you're ready to move on in this guide, just close that tab with the X:
 
-<img src="imgs/python-script-setup/Pasted image 20250903132904.png" width="200">
+<img src="imgs/python-script-setup/Pasted image 20250903132904.png" width="250">
 
 
 Let's take a quick tour of the UI and what I'll be calling different parts of it throughout the rest of the guide. Don't worry about if your UI doesn't match the screenshots at the moment (it probably doesn't), and don't worry about understanding the descriptions right now; they're there for your future reference.
@@ -158,8 +158,9 @@ Mac:
 
 
 Linux:
+- <img src="imgs/python-script-setup/Screenshot from 2025-09-03 16-51-06.png" width="300">
 
-{ADD}
+
 
 ---
 
@@ -179,6 +180,7 @@ To get set up to install our first Python script, let's make a new folder inside
 		- <img src="imgs/python-script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="400">
 	- Mac/Linux: `~/py-scripts/yt-dlp/`
 		- <img src="imgs/python-script-setup/Pasted image 20250903143448.png" width="200">
+		- <img src="imgs/python-script-setup/Screenshot from 2025-09-03 16-51-35.png" width="400">
 
 This folder will contain everything related to this one script.
 
@@ -188,9 +190,10 @@ This folder will contain everything related to this one script.
 We next want to open this folder as a "workspace" in VS Code.
 
 1. Launch VS Code on your computer again (or maximize it from the tray).
-2. From inside VS Code, go to File > Open Folder:
+2. From inside VS Code, go to File > Open Folder, then navigate to the folder we just created to open it:
 	- <img src="imgs/python-script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
 	- <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
+	- <img src="imgs/python-script-setup/Screenshot from 2025-09-03 16-52-13.png" width="600">
 
 3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `ps-scripts/` or only per-script.)
 	- <img src="imgs/python-script-setup/Pasted image 20250903133609.png" width="300">
@@ -301,11 +304,6 @@ If you see this warning as `yt-dlp` installs, make sure you installed the latest
 ```bash
 Deprecated Feature: Support for Python version 3.9 has been deprecated. Please update to Python 3.10 or above
 ```
-{UPDATE BELOW}
-📝 **Note**: If the script you want isn't showing up on the PyPi site as pip-installable, it may need a different installation method - check their documentation for details. Other common flows are:
-- get source code from as a zip from GitHub
-- clone the repo files locally from GitHub or GitLab
-- use curl to download binaries
 
 ---
 
@@ -451,6 +449,10 @@ Let's review what we've done so you can reference it later.
 - [csvkit](https://pypi.org/project/csvkit/)
 - [internetarchive cli tool `ia`](https://pypi.org/project/internetarchive/)
 
+**Note**: If the script you want isn't showing up on the PyPi site as pip-installable, it may need a different installation method - check the script's documentation for details. Other common flows are:
+- get source code from as a zip from GitHub
+- clone the repo files locally from GitHub or GitLab
+- use curl to download binaries
 
 ---
 
