@@ -57,7 +57,7 @@ Use the default installer settings, along with checking the box for **Add python
 #### Linux
 On most Linux distros, Python will already be installed. You can check in the standard terminal with the command:
 ```bash
-$ python3 --version
+python3 --version
 	Python 3.10.12 # hopefully you get something like this back
 ```
 
