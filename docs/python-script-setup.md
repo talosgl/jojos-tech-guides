@@ -93,7 +93,7 @@ Note: You could accomplish the same things using just the terminal, but VS Code 
 ---
 
 ### 3. Launch VS Code & Take a moment to look at the UI
-Now let's launch VS Code. It may auto-launch after it finishes installing. If not, here's the standard ways:
+Now let's launch VS Code. It may auto-launch after it finishes installing. If not, here're the standard ways:
 
 - Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
 	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
@@ -103,7 +103,7 @@ Now let's launch VS Code. It may auto-launch after it finishes installing. If no
 	- (If you followed the VS Code guide to install it on macOS, recall this step:
 		- "Drag `Visual Studio Code.app` to the **Applications** folder, making it available in the macOS Launchpad.")
 - Linux:
-	- In Ubuntu, launch vs code from the Activities interface: see [Start applications](https://help.ubuntu.com/stable/ubuntu-help/shell-apps-open.html.en).
+	- In Ubuntu, launch VS Code from the Activities interface: see [Start applications](https://help.ubuntu.com/stable/ubuntu-help/shell-apps-open.html.en).
 
 If it's your first time launching VS Code, you may get a tutorial window. If you like, you can step through it, but we're going to skip it. Once you're ready to move on in this guide, just close that tab with the X:
 
@@ -154,7 +154,7 @@ Windows:
 
 Mac:
 1. <img src="imgs/python-script-setup/Pasted image 20250903143215.png" width="300">
-2. <img src="Pasted image 20250903143352.png" width="100">
+2. <img src="imgs/python-script-setup/Pasted image 20250903143352.png" width="100">
 
 
 Linux:
