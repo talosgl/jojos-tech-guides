@@ -173,7 +173,7 @@ To get set up to install our first Python script, let's make a new folder inside
 1. Navigate to the py-scripts folder you created earlier.
 	- Windows: `C:\py-scripts\`
 	- Mac/Linux: `~/py-scripts/`
-1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use Cmd+Shift+N (Mac).
+1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use `Cmd+Shift+N` (Mac).
 2. Name it after the script you want to install - for our example, use `yt-dlp`
 3. Verify you've got the right folder structure:
 	- Windows: `C:\py-scripts\yt-dlp\`
