@@ -118,7 +118,7 @@ Let's take a quick tour of the UI and what I'll be calling different parts of it
 2. 🟪 **Integrated Terminal** - where we'll run commands
 3. 🟧 **Explorer** pane (file tree) - where we'll see the folder structure per-script
 4. 🩷 **Run and Debug** panel - for the advanced script launcher
-5. 🟨 **Extensions** - where you install additional plugins for added functionality
+5. ⭐ **Extensions** - where you install additional plugins for added functionality
 
 <img src="imgs/python-script-setup/vs_code_ui_base_numbered.png" alt="VS Code UI overview showing main panels" width="600">
 
@@ -331,7 +331,8 @@ yt-dlp "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 [youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ 
 [youtube] dQw4w9WgXcQ: Downloading webpage ...
 ```
-4. Find the result of our download in the script's root folder, visible inside VS Code:
+4. NOTE: You may get a warning message `WARNING: ffmpeg not found. The downloaded format may not be the best available...` — for our purposes, it's okay to ignore this warning.
+5. Find the result of our download in the script's root folder, visible inside VS Code:
 	- <img src="imgs/python-script-setup/Pasted image 20250902151109.png" alt="Downloaded video file visible in VS Code Explorer" width="600">
 
 ### Sidequest: Understanding Command Arguments
