@@ -83,6 +83,7 @@ Here are more detailed guides per OS:
 - [Install VS Code on Linux](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) - You can stop when you reach the heading "Configure VS Code as the default text editor" (You don't need to do that, unless you want to.)
 
 On Windows, the default installer settings should be fine, but you can enable the context menu options as well to help future-you out:
+
 <img src="imgs/python-script-setup/Pasted image 20250903132646.png" width="400">
 
 #### What is this, and why am I installing it?
