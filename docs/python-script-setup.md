@@ -28,8 +28,8 @@ You should only need to do the steps in this section should one time on your com
 #### Optional Sidequest: Check and see if Python's already installed 
 If you're already comfortable in the terminal, you can check and see if you've previously installed python before with:
 ```bash
-~$ python --version # Windows
-~$ python3 --version # Mac & Linux
+python --version # Windows
+python3 --version # Mac & Linux
 ```
 If you get a version number back, make sure it's above 3.10.
 
@@ -57,7 +57,7 @@ Use the default installer settings, along with checking the box for **Add python
 #### Linux
 On most Linux distros, Python will already be installed. You can check in the standard terminal with the command:
 ```bash
-$ python3 --version
+python3 --version
 	Python 3.10.12 # hopefully you get something like this back
 ```
 
@@ -83,6 +83,7 @@ Here are more detailed guides per OS:
 - [Install VS Code on Linux](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) - You can stop when you reach the heading "Configure VS Code as the default text editor" (You don't need to do that, unless you want to.)
 
 On Windows, the default installer settings should be fine, but you can enable the context menu options as well to help future-you out:
+
 <img src="imgs/python-script-setup/Pasted image 20250903132646.png" width="400">
 
 #### What is this, and why am I installing it?
@@ -93,7 +94,7 @@ Note: You could accomplish the same things using just the terminal, but VS Code 
 ---
 
 ### 3. Launch VS Code & Take a moment to look at the UI
-Now let's launch VS Code. It may auto-launch after it finishes installing. If not, here's the standard ways:
+Now let's launch VS Code. It may auto-launch after it finishes installing. If not, here're the standard ways:
 
 - Windows: Launch VS Code from **Start** > **Search** > type in `vs code` > Click **Open**
 	- <img src="imgs/python-script-setup/Pasted image 20250902142931.png" alt="Launching VS Code from Windows Start menu" width="500">
@@ -103,7 +104,7 @@ Now let's launch VS Code. It may auto-launch after it finishes installing. If no
 	- (If you followed the VS Code guide to install it on macOS, recall this step:
 		- "Drag `Visual Studio Code.app` to the **Applications** folder, making it available in the macOS Launchpad.")
 - Linux:
-	- In Ubuntu, launch vs code from the Activities interface: see [Start applications](https://help.ubuntu.com/stable/ubuntu-help/shell-apps-open.html.en).
+	- In Ubuntu, launch VS Code from the Activities interface: see [Start applications](https://help.ubuntu.com/stable/ubuntu-help/shell-apps-open.html.en).
 
 If it's your first time launching VS Code, you may get a tutorial window. If you like, you can step through it, but we're going to skip it. Once you're ready to move on in this guide, just close that tab with the X:
 
@@ -112,17 +113,18 @@ If it's your first time launching VS Code, you may get a tutorial window. If you
 
 Let's take a quick tour of the UI and what I'll be calling different parts of it throughout the rest of the guide. Don't worry about if your UI doesn't match the screenshots at the moment (it probably doesn't), and don't worry about understanding the descriptions right now; they're there for your future reference.
 
-1. **Explorer** pane (file tree) - where we'll see the folder structure per-script
-2. **Editor** area - where files open
-3. **Integrated Terminal** - where we'll run commands
-4. **Run and Debug** panel - for the advanced script launcher
-5. **Extensions** - where you install additional plugins for added functionality
 
-<img src="imgs/python-script-setup/Pasted image 20250902160012.png" alt="VS Code UI overview showing main panels" width="600">
+1. 🟩 **Editor** area - where files open
+2. 🟪 **Integrated Terminal** - where we'll run commands
+3. 🟧 **Explorer** pane (file tree) - where we'll see the folder structure per-script
+4. 🩷 **Run and Debug** panel - for the advanced script launcher
+5. 🟨 **Extensions** - where you install additional plugins for added functionality
+
+<img src="imgs/python-script-setup/vs_code_ui_base_numbered.png" alt="VS Code UI overview showing main panels" width="600">
 
 <img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="300">
 
-<img src="imgs/python-script-setup/Pasted image 20250903134955.png" width="300">
+<img src="imgs/python-script-setup/extensions.png" width="300">
 
 ---
 
@@ -154,7 +156,7 @@ Windows:
 
 Mac:
 1. <img src="imgs/python-script-setup/Pasted image 20250903143215.png" width="300">
-2. <img src="Pasted image 20250903143352.png" width="100">
+2. <img src="imgs/python-script-setup/Pasted image 20250903143352.png" width="100">
 
 
 Linux:
@@ -173,7 +175,7 @@ To get set up to install our first Python script, let's make a new folder inside
 1. Navigate to the py-scripts folder you created earlier.
 	- Windows: `C:\py-scripts\`
 	- Mac/Linux: `~/py-scripts/`
-1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use Cmd+Shift+N (Mac).
+1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use `Cmd+Shift+N` (Mac).
 2. Name it after the script you want to install - for our example, use `yt-dlp`
 3. Verify you've got the right folder structure:
 	- Windows: `C:\py-scripts\yt-dlp\`
@@ -211,8 +213,8 @@ We're ready to set up a "virtual environment", or [venv](https://docs.python.org
 
 Let's do it. 
 1. In VS Code, open the Command Palette by going to View > Command Palette or using the hotkey:
-	- Windows/Linux: CTRL+SHIFT+P
-	- Mac: CMD+SHIFT+P
+	- Windows/Linux: `Ctrl+Shift+P`
+	- Mac: `Cmd+Shift+P`
 2. Start typing "Python: Create Environment" and then select it from the list:
 	- <img src="imgs/python-script-setup/Pasted image 20250902144605.png" alt="VS Code Command Palette showing Python Create Environment option" width="600">
 3. Select Venv from the options:
@@ -250,7 +252,7 @@ At line:1 char:3
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
 ```
-If you don't hit any error—sick! Skip down to [Verify the venv's ready in Windows](#verify-the-venvs-ready).
+If you don't hit any error—sick! Skip down to [Verify the venv's ready](#verify-the-venvs-ready).
 
 If you do hit an error like this, to work around it you can launch an instance of Windows Command Prompt instead. In the top-right of the terminal, click the dropdown arrow next to the plus sign, and select Command Prompt:
 
@@ -279,7 +281,7 @@ Stay in the venv-activated terminal and move on to the next section!
 
 ---
 
-### 5. Download / "install" the Python Script into the venv using pip
+### 5. Download / Install the Python Script into the venv using pip
 It's time to install our example script, `yt-dlp`!
 
 We're going to use the official Python Package installer, which is called `pip` for some unholy reason. Installable packages can be found on the official site at https://pypi.org/.
@@ -300,7 +302,7 @@ Successfully installed yt-dlp-20##.##.##
 ```
 
 
-If you see this warning as `yt-dlp` installs, make sure you installed the latest Python from the first part of the guide
+If you see this warning as `yt-dlp` installs, make sure you installed the latest Python from the first part of the guide:
 ```bash
 Deprecated Feature: Support for Python version 3.9 has been deprecated. Please update to Python 3.10 or above
 ```
