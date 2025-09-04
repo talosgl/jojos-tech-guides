@@ -23,7 +23,7 @@ Get from "I found this useful .py script" to "it's running on my computer" with 
 ---
 
 ## Part 1: Steps to do One-Time per Computer
-You should only need to do the steps in this section should one time on your computer (or per user account).
+You should only need to do the steps in this section one time on your computer (or per user account).
 
 #### Optional Sidequest: Check and see if Python's already installed 
 If you're already comfortable in the terminal, you can check and see if you've previously installed python before with:
