@@ -211,8 +211,8 @@ We're ready to set up a "virtual environment", or [venv](https://docs.python.org
 
 Let's do it. 
 1. In VS Code, open the Command Palette by going to View > Command Palette or using the hotkey:
-	- Windows/Linux: CTRL+SHIFT+P
-	- Mac: CMD+SHIFT+P
+	- Windows/Linux: `Ctrl+Shift+P`
+	- Mac: `Cmd+Shift+P`
 2. Start typing "Python: Create Environment" and then select it from the list:
 	- <img src="imgs/python-script-setup/Pasted image 20250902144605.png" alt="VS Code Command Palette showing Python Create Environment option" width="600">
 3. Select Venv from the options:
@@ -250,7 +250,7 @@ At line:1 char:3
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
 ```
-If you don't hit any error—sick! Skip down to [Verify the venv's ready in Windows](#verify-the-venvs-ready).
+If you don't hit any error—sick! Skip down to [Verify the venv's ready](#verify-the-venvs-ready).
 
 If you do hit an error like this, to work around it you can launch an instance of Windows Command Prompt instead. In the top-right of the terminal, click the dropdown arrow next to the plus sign, and select Command Prompt:
 
@@ -279,7 +279,7 @@ Stay in the venv-activated terminal and move on to the next section!
 
 ---
 
-### 5. Download / "install" the Python Script into the venv using pip
+### 5. Download / Install the Python Script into the venv using pip
 It's time to install our example script, `yt-dlp`!
 
 We're going to use the official Python Package installer, which is called `pip` for some unholy reason. Installable packages can be found on the official site at https://pypi.org/.
@@ -300,7 +300,7 @@ Successfully installed yt-dlp-20##.##.##
 ```
 
 
-If you see this warning as `yt-dlp` installs, make sure you installed the latest Python from the first part of the guide
+If you see this warning as `yt-dlp` installs, make sure you installed the latest Python from the first part of the guide:
 ```bash
 Deprecated Feature: Support for Python version 3.9 has been deprecated. Please update to Python 3.10 or above
 ```
