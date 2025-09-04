@@ -113,17 +113,18 @@ If it's your first time launching VS Code, you may get a tutorial window. If you
 
 Let's take a quick tour of the UI and what I'll be calling different parts of it throughout the rest of the guide. Don't worry about if your UI doesn't match the screenshots at the moment (it probably doesn't), and don't worry about understanding the descriptions right now; they're there for your future reference.
 
-1. **Explorer** pane (file tree) - where we'll see the folder structure per-script
-2. **Editor** area - where files open
-3. **Integrated Terminal** - where we'll run commands
-4. **Run and Debug** panel - for the advanced script launcher
-5. **Extensions** - where you install additional plugins for added functionality
 
-<img src="imgs/python-script-setup/Pasted image 20250902160012.png" alt="VS Code UI overview showing main panels" width="600">
+1. 🟩 **Editor** area - where files open
+2. 🟪 **Integrated Terminal** - where we'll run commands
+3. 🟧 **Explorer** pane (file tree) - where we'll see the folder structure per-script
+4. 🩷 **Run and Debug** panel - for the advanced script launcher
+5. 🟨 **Extensions** - where you install additional plugins for added functionality
+
+<img src="imgs/python-script-setup/vs_code_ui_base_numbered.png" alt="VS Code UI overview showing main panels" width="600">
 
 <img src="imgs/python-script-setup/Pasted image 20250902160154.png" alt="VS Code UI with terminal and debug panels highlighted" width="300">
 
-<img src="imgs/python-script-setup/Pasted image 20250903134955.png" width="300">
+<img src="imgs/python-script-setup/extensions.png" width="300">
 
 ---
 
