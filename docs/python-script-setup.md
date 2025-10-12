@@ -197,7 +197,7 @@ We next want to open this folder as a "workspace" in VS Code.
 	- <img src="imgs/python-script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
 	- <img src="imgs/python-script-setup/Screenshot from 2025-09-03 16-52-13.png" width="600">
 
-3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `ps-scripts/` or only per-script.)
+3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `py-scripts/` or only per-script.)
 	- <img src="imgs/python-script-setup/Pasted image 20250903133609.png" width="300">
 	- <img src="imgs/python-script-setup/Pasted image 20250903143554.png" width="300">
 4. You may also get a notification from the extensions icon that the app needs to update/restart:
