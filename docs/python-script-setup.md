@@ -445,7 +445,16 @@ Let's review what we've done so you can reference it later.
 - Successfully ran your first script in its isolated environment
 
 ---
+## Updating scripts with pip
+If you get an error when you try to run yt-dlp, it may tell you that you're running an outdated version. You can update using pip, with this command:
 
+```
+pip install --upgrade yt-dlp
+```
+
+That's the same pattern you'll use to update other pip-installed apps you may get later: `pip install --upgrade {app_name}`
+
+---
 
 ## Other Useful Python Scripts you can check out and install with pip
 - [gallery-dl](https://pypi.org/project/gallery-dl/)
