@@ -446,7 +446,7 @@ Let's review what we've done so you can reference it later.
 
 ---
 ## Updating scripts with pip
-If you get an error when you try to run yt-dlp, it may tell you that you're running an outdated version. You can update using pip, with this command:
+If you get an error when you try to run yt-dlp later--like if you come back and try to use it a few weeks from now--it may tell you that you're running an outdated version. You can update using pip, with this command:
 
 ```
 pip install --upgrade yt-dlp
