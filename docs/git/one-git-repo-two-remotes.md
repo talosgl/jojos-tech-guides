@@ -214,3 +214,69 @@ git push https://github.com/yourUserAccount/your-public-repo-name.git my_feature
 ```bash
 git branch -vv
 ```
+
+### Troubleshooting
+
+#### Remotes are out of sync
+If you've published to public but forgot to push to private (or vice versa), you can check what commits exist in one but not the other:
+
+```bash
+# See commits in private that aren't in public
+git log public/main..private/main
+
+# See commits in public that aren't in private
+git log private/main..public/main
+
+# See a visual comparison
+git log --oneline --graph --all --decorate
+```
+
+To sync them up:
+```bash
+# If private is ahead, push those commits to public
+git push https://github.com/yourUserAccount/your-public-repo-name.git main
+
+# If public is ahead, pull those commits to local and push to private
+git pull public main
+git push private main
+```
+
+#### Merge conflicts when pulling from public
+If you've made changes in both remotes that conflict:
+
+```bash
+git pull public main
+# CONFLICT (content): Merge conflict in docs/guide.md
+
+# Fix the conflicts in your editor, then:
+git add docs/guide.md
+git commit -m "Merge changes from public repo"
+git push private main  # Keep private in sync
+```
+
+#### Accidentally tried to push to public
+If you run `git push` and see the `no_push` error, you're protected! Just use the full URL when you're actually ready to publish:
+
+```bash
+git push https://github.com/yourUserAccount/your-public-repo-name.git main
+```
+
+#### Need to restore the public push URL
+If you want to re-enable normal pushing to public:
+
+```bash
+git remote set-url --push public https://github.com/yourUserAccount/your-public-repo-name.git
+```
+
+### Quick Reference
+
+| Action | Command |
+|--------|---------|
+| Normal push (to private) | `git push` |
+| Publish to public | `git push https://github.com/yourUserAccount/your-public-repo-name.git main` |
+| Pull from public | `git pull public main` |
+| Fetch from public | `git fetch public` |
+| Check remote setup | `git remote -v` |
+| Check branch tracking | `git branch -vv` |
+| Compare commits between remotes | `git log public/main..private/main` |
+| Push feature branch to private | `git push -u private my_branch` |
