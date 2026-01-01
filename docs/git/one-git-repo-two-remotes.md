@@ -22,7 +22,7 @@ If you already have one GitHub repository and you're wanting to set up this priv
 In either case, once these are both created, gather the GitHub URLs for these repos. If you don't know how to do that, check out "Copy the URL for the repository" on the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository) page. 
 
 ### Step 2: Clone ONE GitHub remote repository (Recommended: private)
-You may start by cloning clone either of your two GitHub repositories, but I choose to clone the private one myself, because that will set it as the "default" origin. However, you can swap it around if you do it in a different order. For the purposes of the guide we'll assume we're starting with the private repo and I'll cover how to swap it later.
+You may start by cloning either of your two GitHub repositories, but I choose to clone the private one myself, because that will set it as the "default" origin. However, you can swap it around if you do it in a different order. For the purposes of the guide we'll assume we're starting with the private repo and I'll cover how to swap it later.
 
 You'll need to set this up any time you are using a new computer. On a new machine, navigate to the folder where you want the repo to live (e.g., `~/Users/Jojo/dev/...`). Open Git Bash or the terminal you normally use git terminal commands into that folder. 
 
@@ -104,9 +104,9 @@ First, check who's your default fetch. If you cloned from the private repo, that
 git branch --set-upstream-to=private/main main
 ```
 
-Full Example:
+Verify it worked:
 ```bash
-#
+# Check status of current branch's remote default for fetch ("upstream")
 git branch -vv
 
 # BAD                       vvvvvv 
@@ -135,7 +135,8 @@ To do this, we eliminate the "real" URL for pushing to the public remote, like s
 git remote set-url --push public no_push
 
 # Now you can only pull from public, not push to it
-# Any push attempt will fail with an error
+# Any attempt to push to public will now fail with:
+# fatal: 'no_push' does not appear to be a git repository
 ```
  
 ### Step++: Using the workflow day-to-day
@@ -151,7 +152,7 @@ git push private main
 ```bash
 # When it's time to push, and you're sure, use the full remote URL to push to public main:
 # git push <public_url> <public_repo_branch_name>
-git push -u https://github.com/yourUserAccount/your-public-repo-name.git main
+git push https://github.com/yourUserAccount/your-public-repo-name.git main
 ```
 
 #### Intentionally fetch or pull from public during your workflow:
