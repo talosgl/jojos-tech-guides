@@ -121,22 +121,6 @@ git branch --set-upstream-to=private/main main
 Output showing that my default fetch for main is private:
 ![Output showing that my default fetch for main is private.](imgs/private-upstream.png)
 
-#### Intentionally fetch or pull from public during your workflow:
-```bash
-# Fetch updates from the public repo
-git fetch public
-
-# If you want to see what's different between your local main and public main
-git log main..public/main
-
-# To merge public changes into your local main
-git merge public/main
-
-# Or to pull (fetch + merge) in one command
-git pull public main
-```
-**Common use case:** If you made a hotfix directly on GitHub's web interface in your public repo, or if someone contributed via a pull request to your public repo, you can pull those changes back into your local repository and then push them to private to keep everything in sync.
-
 ### Step 5: Set default `git push` to be private to protect against accidentally publishing draft content publicly 
 For Jojo's Tech Wiki, I also want to make sure:
 - I never publish to my public remote by accident/I only ever publish to my public remote intentionally
@@ -153,11 +137,37 @@ git remote set-url --push public no_push
 ```
  
 ### Step++: Using the workflow day-to-day
+
 #### Work on drafts in private, push to private (branch main -> main)
 ```bash
 git add .
 git commit -m "Draft: Guide for one local git repo connected to two GitHub remote repos"
 git push private main
+```
+
+#### Publish to public when you're ready
+```bash
+# When it's time to push, and you're sure, use the full remote URL to push to public main:
+# git push <public_url> <public_repo_branch_name>
+git push -u https://github.com/yourUserAccount/your-public-repo-name.git main
+
+# After that first `git push -u`, subsequent pushes can just be `git push`.
+```
+
+#### Intentionally fetch or pull from public during your workflow:
+If you make hotfixes directly on GitHub's web interface in your public repo, or if someone contributed via a pull request to your public repo, you can pull those changes back into your local repository and then push them to private to keep everything in sync.
+```bash
+# Fetch updates from the public repo
+git fetch public
+
+# If you want to see what's different between your local main and public main
+git log main..public/main
+
+# To merge public changes into your local main
+git merge public/main
+
+# Or to pull (fetch + merge) in one command
+git pull public main
 ```
 
 #### Create a non-main feature branch in private and make sure it pushes to private remote:
@@ -179,6 +189,8 @@ E.g., this feature branch was already published to GH (maybe you created it on a
 git fetch private
 git branch --set-upstream-to=private/my_branch my_branch_that_was_already_on_GH
 ```
+
+
 #### Push a local private feature branch to public main branch
 ```bash
 # Option 1: Merge to private main first, then push to public
@@ -195,15 +207,6 @@ git push https://github.com/yourUserAccount/your-public-repo-name.git my_feature
 # This pushes your local "my_feature_branch" to the remote "main" branch
 ```
 
-
-#### Publish to public when you're ready
-```bash
-# When it's time to push, and you're sure, use the full remote URL to push to public main:
-# git push <public_url> <public_repo_branch_name>
-git push -u https://github.com/yourUserAccount/your-public-repo-name.git main
-
-# After that first `git push -u`, subsequent pushes can just be `git push`.
-```
 #### Check which remote each local branch will push or fetch to/from
 ```bash
 git branch -vv
