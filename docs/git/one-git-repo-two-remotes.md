@@ -15,7 +15,7 @@ You don't really need to understand git remotes in depth for this guide, but it 
 ### Step 1: Set up your two GitHub remote repositories, public & private
 I'm going to make no assumptions about your current project set up and assume you have nothing. First off, create two GitHub repositories, one public, and one private. [Here's a guide from GitHub on how to create repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository).
 
-![Create a Remote Github Repo with private visibility](imgs/github-repo-creation-vis.png)
+![Create a Remote Github Repo with private visibility](imgs/one-git-repo-two-remotes/github-repo-creation-vis.png)
 
 If you already have one GitHub repository and you're wanting to set up this private/public system, you'll just need to create the other repo, with the opposite visibility setting.
 
@@ -121,7 +121,7 @@ git branch --set-upstream-to=private/main main
 
 Output showing that my default fetch for main is private:
 
-<img src="imgs/private-upstream.png" width="400" alt="Output showing that my default fetch for main is private">
+<img src="imgs/one-git-repo-two-remotes/private-upstream.png" width="400" alt="Output showing that my default fetch for main is private">
 
 ### Step 5: Set default `git push` to be private to protect against accidentally publishing draft content publicly 
 For Jojo's Tech Wiki, I also want to make sure:
