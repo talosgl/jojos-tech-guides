@@ -14,7 +14,8 @@ You don't really need to understand git remotes in depth for this guide, but it 
 
 ### Step 1: Set up your two GitHub remote repositories, public & private
 I'm going to make no assumptions about your current project set up and assume you have nothing. First off, create two GitHub repositories, one public, and one private. [Here's a guide from GitHub on how to create repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository).
-- ![Create a Remote Github Repo with private visibility](imgs/github-repo-creation-vis.png)
+
+![Create a Remote Github Repo with private visibility](imgs/github-repo-creation-vis.png)
 
 If you already have one GitHub repository and you're wanting to set up this private/public system, you'll just need to create the other repo, with the opposite visibility setting.
 
@@ -69,7 +70,7 @@ Like when we cloned, we're going to add a second remote here with a **custom sho
 ```bash
 # Add the public repo as a second remote
 # git remote add <shortname> <url>
-git remote add -o public https://github.com/yourUserAccount/your-public-repo-name.git
+git remote add public https://github.com/yourUserAccount/your-public-repo-name.git
 ```
 
 Example:
@@ -119,7 +120,8 @@ git branch --set-upstream-to=private/main main
 ```
 
 Output showing that my default fetch for main is private:
-![Output showing that my default fetch for main is private.](imgs/private-upstream.png)
+
+<img src="imgs/private-upstream.png" width="400" alt="Output showing that my default fetch for main is private">
 
 ### Step 5: Set default `git push` to be private to protect against accidentally publishing draft content publicly 
 For Jojo's Tech Wiki, I also want to make sure:
@@ -150,8 +152,6 @@ git push private main
 # When it's time to push, and you're sure, use the full remote URL to push to public main:
 # git push <public_url> <public_repo_branch_name>
 git push -u https://github.com/yourUserAccount/your-public-repo-name.git main
-
-# After that first `git push -u`, subsequent pushes can just be `git push`.
 ```
 
 #### Intentionally fetch or pull from public during your workflow:
@@ -181,6 +181,8 @@ git pull public main
 # Tell an existing (local) branch to use the private remote when you push it to GH for the first time
 # git push -u <shortname> <feature_branch_name>
 git push -u private my_branch
+
+# After that first `git push -u`, subsequent pushes can just be `git push`.
 ```
 
 #### Ensure a non-main branch you fetched from GitHub will fetch from private remote
