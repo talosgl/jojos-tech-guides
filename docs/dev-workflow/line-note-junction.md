@@ -114,6 +114,9 @@ To add notes faster, you can set up a keyboard shortcut:
 3. Click the + icon to add a keybinding
 4. Press your desired key combination (e.g., `Ctrl+Alt+N`)
 
+<img src="imgs/keyboard_short.png" alt="Example of keyboard shortcut set" width="600">
+
+
 #### Important caveat about line numbers
 
 Line Note annotations are tied to **specific line numbers**. If code changes (lines added/removed above your note), the note will stay at the original line number and may no longer align with the code you annotated. When this happens, you'll need to manually move or update your notes. Include enough context in your notes (function names, code snippets) to help you relocate them if needed.
