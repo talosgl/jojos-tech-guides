@@ -1,7 +1,7 @@
 
 # How to Annotate Code Without Modifying Source Files
 
-### Overview
+## Overview
 
 This guide covers how to annotate a codebase you cannot or do not want to modify. Notes stay completely separate from source files. We'll use VS Code, the [Line Note Extension](https://marketplace.visualstudio.com/items?itemName=tkrkt.linenote) (MIT License), and OS filesystem junctions/symlinks to create a separate "vault" for annotations.
 
@@ -33,7 +33,8 @@ Set up a system to annotate code with visual indicators, keeping notes separate 
 
 ---
 
-## Set up folder structure and junction
+## Steps
+### Set up folder structure and junction
 
 Create a vault folder and navigate to it:
 ```bash
@@ -80,7 +81,7 @@ ln -s /path/to/actual/repo codebase
 
 ---
 
-## Open my_repo_annotations as the root folder in VS Code
+### Open my_repo_annotations as the root folder in VS Code
 
 ```bash
 code .
@@ -90,7 +91,7 @@ code .
 
 ---
 
-## Get Line Note Extension
+### Get Line Note Extension
 
 Ensure Line Note extension is installed:
 
@@ -99,7 +100,7 @@ Ensure Line Note extension is installed:
 
 ---
 
-## Add your first annotation
+### Add your first annotation
 
 Navigate to any file in `codebase/` within VS Code. Right-click on a line and select "Line Note: Add note at current position":
 
@@ -130,13 +131,7 @@ To add notes faster, you can set up a keyboard shortcut:
 
 ---
 
-### Important reminder about line number-based notes
-
-Line Note annotations are tied to **specific line numbers** in **specific files**. If code changes (lines added/removed) or files move, notes stay at their original locations and may no longer align with the code you annotated. Include enough context in your notes (function names, code snippets) to help relocate them manually if you need to later.
-
----
-
-## (Optional) Set up a local git repo for your notes
+### (Optional) Set up a local git repo for your notes
 
 This is *extra* optional. Only follow if you want to version control your annotations with git!
 
@@ -175,6 +170,8 @@ git commit -m "Initial commit: set up annotation vault"
 Your annotation vault is set up. You can now add notes to any code with visual line indicators, keep notes separate from source, and version control your learning. 
 
 **Tip**: If your source code tends to move around on your local file system (e.g., after a new release/version, the parent folder's name changes), delete the old junction and recreate it pointing to the new location. Your notes in `.vscode/linenote/` will persist, though you may need to manually adjust them if file paths or line numbers have changed significantly.
+
+**Important reminder about line number-based notes**: Line Note annotations are tied to **specific line numbers** in **specific files**. If code changes (lines added/removed) or files move, notes stay at their original locations and may no longer align with the code you annotated. Include enough context in your notes (function names, code snippets) to help relocate them manually if you need to later.
 
 ---
 
