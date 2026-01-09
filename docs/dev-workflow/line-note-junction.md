@@ -9,6 +9,8 @@ This guide covers how to annotate a codebase you cannot or do not want to modify
 
 **Example use case**: When I'm working on my own code or a forked open source repository, I can just use code comments to annotate as I read line-by-line. I do this to help myself learn it, internalize, and make sure I truly understand what code is doing. But what about when there is not a way to fork the code? Perhaps the version control system (VCS) used by the team doesn't allow for that sort of branching, or for whatever reason, I don't want to pollute the original code files with comments as I read through. I want a way to take notes and associate those notes with specific parts of code in my IDE, like I would with MS Word's inline comments feature.
 
+---
+
 MS Word's inline comment feature:
 
 <img src="imgs/ms_word_annotation.png" alt="MS Word's inline comment feature" width="600">
@@ -32,8 +34,6 @@ Set up a system to annotate code with visual indicators, keeping notes separate 
 ---
 
 ## Set up folder structure and junction
-
-Create a folder that will house your notes (the vault).
 
 Create a vault folder and navigate to it:
 ```bash
@@ -101,7 +101,7 @@ Ensure Line Note extension is installed:
 
 ## Add your first annotation
 
-Navigate to any file in codebase/ within VS Code. Right-click on a line and select "Line Note: Add note at current position":
+Navigate to any file in `codebase/` within VS Code. Right-click on a line and select "Line Note: Add note at current position":
 
 <img src="imgs/00_add_note_context_menu.png" alt="Right-click context menu showing Add note at current position" width="600">
 
@@ -113,7 +113,7 @@ You'll see a visual indicator on lines with notes:
 
 <img src="imgs/02_see_note_inline.png" alt="Note indicator and inline display" width="600">
 
-Verify the setup by checking that .vscode/linenote/ was created in my_repo_annotations (not in the actual repo).
+Verify the setup by checking that `.vscode/linenote/` was created in `my_repo_annotations` (not in the actual repo).
 
 ---
 
