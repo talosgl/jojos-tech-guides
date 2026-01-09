@@ -22,6 +22,10 @@ Get from "I found this useful .py script" to "it's running on my computer" with 
 
 ---
 
+> **⚠️ Note (January 2026)**: As of November 2025, yt-dlp requires an additional JavaScript runtime (Deno/Node.js) for full YouTube support. This guide will be updated with a different example package soon. The core concepts (installing Python, using venv, running pip packages) remain valid.
+
+---
+
 ## Part 1: Steps to do One-Time per Computer
 You should only need to do the steps in this section one time on your computer (or per user account).
 
