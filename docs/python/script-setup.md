@@ -332,7 +332,17 @@ Type and run this to see all the options available for manuscript2slides:
 manuscript2slides-cli --help
 ```
 
-The `--help` argument is common across most command-line tools - it shows you what the program can do and how to use it. In the example above, `--demo-docx2pptx` is an argument that tells manuscript2slides to run a demonstration.
+The `--help` argument is common across most command-line tools - it shows you what the program can do and how to use it.
+
+So that you can get a feel for using options and args, let's look at the `--demo-docx2pptx` argument we used earlier. This tells manuscript2slides to run a demonstration that converts a DOCX file to PowerPoint. There are other demo options too:
+- `--demo-docx2pptx` - Converts a Word document to PowerPoint
+- `--demo-pptx2docx` - Converts a PowerPoint presentation to Word
+- `--demo-round-trip` - Demonstrates converting in both directions
+
+Try running a different demo:
+```bash
+manuscript2slides-cli --demo-pptx2docx
+```
 
 ### Advanced Method: VS Code Debugger
 If you're going to run a script a lot and you want to use a more UI-friendly interface rather than the terminal, you can us the VS Code debugger and set up a `launch.json`. This is particularly nice if you've got specific arguments you want to run every time, and you want to customize them sometimes.
@@ -346,7 +356,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 	- <img src="imgs/script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
 5. Note that it creates the file under a new folder, called `.vscode/`, which you can see by swapping back to the Explorer pane
 	- <img src="imgs/script-setup/Pasted image 20250902160650.png" alt="VS Code Explorer showing .vscode folder and launch.json file" width="300">
-6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it. Replace the contents with something like the below. TODO: EXPLAIN ABOUT ARGS AND CONNECT BACK TO EARLIER
+6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it to pass different arguments (like the demo flags we learned about earlier). Replace the contents with something like the below.
 	- (NOTE: text starting with `//` are comments, there to explain what the line is doing in our example, which are allowed in VS Code's launch.json but not in normal JSON.)
  
 ```json
