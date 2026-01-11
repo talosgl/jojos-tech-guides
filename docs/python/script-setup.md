@@ -180,9 +180,9 @@ To get set up to install our first Python script, let's make a new folder inside
 3. Verify you've got the right folder structure:
 	- Windows: `C:\py-scripts\manuscript2slides\`
 		- <img src="imgs/script-setup/Pasted image 20260110193005.png" alt="Creating manuscript2slides folder" width="400">
-	- TODO: FIX SCREENCAPS - Mac/Linux: `~/py-scripts/manuscript2slides/`
-		- <img src="imgs/script-setup/Pasted image 20250903143448.png" width="200">
-		- <img src="imgs/script-setup/Screenshot from 2025-09-03 16-51-35.png" width="400">
+	- Mac/Linux: `~/py-scripts/manuscript2slides/`
+		- <img src="imgs/script-setup/mac_create_folder_for_script.png" width="400">
+		- <img src="imgs/script-setup/ubuntu_new_folder.png" width="400">
 
 This folder will contain everything related to this one script.
 
@@ -194,12 +194,15 @@ We next want to open this folder as a "workspace" in VS Code.
 1. Launch VS Code on your computer again (or maximize it from the tray).
 2. From inside VS Code, go to File > Open Folder, then navigate to the folder we just created to open it:
 	- <img src="imgs/script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
-	- <img src="imgs/script-setup/Pasted image 20260110193145.png" alt="VS Code folder selection dialog" width="500">
-	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Screenshot from 2025-09-03 16-52-13.png" width="600">
+	- Windows:
+		- <img src="imgs/script-setup/Pasted image 20260110193145.png" alt="VS Code folder selection dialog" width="500">
+	- Mac:
+		- <img src="imgs/script-setup/mac_open_folder_in_vscode.png" width="400">
+	- Linux:
+		- <img src="imgs/script-setup/ubuntu_open_folder_in_vscode.png" width="400">
 
 3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `py-scripts/` or only per-script.)
-	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Pasted image 20250903133609.png" width="300">
-	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Pasted image 20250903143554.png" width="300">
+		<img src="imgs/script-setup/mac_manage_trust_popup.png" width ="400">
 4. You may also get a notification from the extensions icon that the app needs to update/restart:
 	 - <img src="imgs/script-setup/Pasted image 20250903143647.png" alt="Extensions that need to be updated" width="300">
 5. Alright, now hopefully we're all settled into VS Code. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
@@ -229,7 +232,15 @@ Let's do it.
 
 The steps we just followed are VS Code's way of doing what you might see elsewhere as the following command: 
 ```bash
-python -m venv .venv.
+# ".venv" is just the conventional name of the directory for venv to store itself; you can call it whatever you want
+python -m venv .venv
+
+# or on Unix-based systems:
+python3 -m venv .venv
+
+# If you want to specify with a specific Python version (e.g. 3.13), use:
+# python -<VERSION NUMBER> -m venv <FOLDER NAME YOU WANT NEW VENV TO CREATE AND USE>
+py -3.13 -m venv .venv-py313
 ```
 
 ---
