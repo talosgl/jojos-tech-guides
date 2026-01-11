@@ -178,8 +178,8 @@ To get set up to install our first Python script, let's make a new folder inside
 1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use `Cmd+Shift+N` (Mac).
 2. Name it after the script you want to install - for our example, use `manuscript2slides`
 3. Verify you've got the right folder structure:
-	- TODO: FIX SCREENCAP - Windows: `C:\py-scripts\manuscript2slides\`
-		- <img src="imgs/script-setup/Pasted image 20250902141839.png" alt="Creating manuscript2slides folder" width="400">
+	- Windows: `C:\py-scripts\manuscript2slides\`
+		- <img src="imgs/script-setup/Pasted image 20260110193005.png" alt="Creating manuscript2slides folder" width="400">
 	- TODO: FIX SCREENCAPS - Mac/Linux: `~/py-scripts/manuscript2slides/`
 		- <img src="imgs/script-setup/Pasted image 20250903143448.png" width="200">
 		- <img src="imgs/script-setup/Screenshot from 2025-09-03 16-51-35.png" width="400">
@@ -194,7 +194,7 @@ We next want to open this folder as a "workspace" in VS Code.
 1. Launch VS Code on your computer again (or maximize it from the tray).
 2. From inside VS Code, go to File > Open Folder, then navigate to the folder we just created to open it:
 	- <img src="imgs/script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
-	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
+	- <img src="imgs/script-setup/Pasted image 20260110193145.png" alt="VS Code folder selection dialog" width="500">
 	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Screenshot from 2025-09-03 16-52-13.png" width="600">
 
 3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `py-scripts/` or only per-script.)
@@ -203,8 +203,7 @@ We next want to open this folder as a "workspace" in VS Code.
 4. You may also get a notification from the extensions icon that the app needs to update/restart:
 	 - <img src="imgs/script-setup/Pasted image 20250903143647.png" alt="Extensions that need to be updated" width="300">
 5. Alright, now hopefully we're all settled into VS Code. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
-	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="400">
-
+	- <img src="Pasted image 20260110193300.png" alt="VS Code Explorer pane showing script subfolder opened as workspace" width="400">
 
 ---
 
@@ -224,9 +223,9 @@ Let's do it.
 	- <img src="imgs/script-setup/Pasted image 20250903150405.png" width="600">
 5. VS Code will pop a notification to tell us it's doing the thing, and then that it's finished:
 	- <img src="imgs/script-setup/Pasted image 20250902144801.png" alt="VS Code notification: Creating Python environment" width="600">
-	- <img src="imgs/script-setup/Pasted image 20250902144851.png" alt="VS Code notification: Python environment created successfully" width="600">
+	- <img src="imgs/script-setup/Pasted image 20260110193422.png" alt="VS Code notification: Python environment created successfully" width="600">	- 
 6. To verify all's good so far, make sure that in the Explorer pane, you see a new .venv/ folder under the root of our script folder:
-	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Pasted image 20250902144928.png" alt="VS Code Explorer showing .venv folder created" width="600">
+	- <img src="imgs/script-setup/Pasted image 20260110193447.png" alt="VS Code Explorer showing .venv folder created" width="400">
 
 The steps we just followed are VS Code's way of doing what you might see elsewhere as the following command: 
 ```bash
