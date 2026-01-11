@@ -179,8 +179,8 @@ To get set up to install our first Python script, let's make a new folder inside
 2. Name it after the script you want to install - for our example, use `manuscript2slides`
 3. Verify you've got the right folder structure:
 	- Windows: `C:\py-scripts\manuscript2slides\`
-		- <img src="imgs/script-setup/Pasted image 20250902141839.png" alt="Creating manuscript2slides folder" width="400">
-	- Mac/Linux: `~/py-scripts/manuscript2slides/`
+		- <img src="imgs/script-setup/Pasted image 20260110193005.png" alt="Creating manuscript2slides folder" width="400">
+	- TODO: FIX SCREENCAPS - Mac/Linux: `~/py-scripts/manuscript2slides/`
 		- <img src="imgs/script-setup/Pasted image 20250903143448.png" width="200">
 		- <img src="imgs/script-setup/Screenshot from 2025-09-03 16-51-35.png" width="400">
 
@@ -194,17 +194,16 @@ We next want to open this folder as a "workspace" in VS Code.
 1. Launch VS Code on your computer again (or maximize it from the tray).
 2. From inside VS Code, go to File > Open Folder, then navigate to the folder we just created to open it:
 	- <img src="imgs/script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
-	- <img src="imgs/script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
-	- <img src="imgs/script-setup/Screenshot from 2025-09-03 16-52-13.png" width="600">
+	- <img src="imgs/script-setup/Pasted image 20260110193145.png" alt="VS Code folder selection dialog" width="500">
+	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Screenshot from 2025-09-03 16-52-13.png" width="600">
 
 3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `py-scripts/` or only per-script.)
-	- <img src="imgs/script-setup/Pasted image 20250903133609.png" width="300">
-	- <img src="imgs/script-setup/Pasted image 20250903143554.png" width="300">
+	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Pasted image 20250903133609.png" width="300">
+	- TODO: FIX THIS SCREENCAP - <img src="imgs/script-setup/Pasted image 20250903143554.png" width="300">
 4. You may also get a notification from the extensions icon that the app needs to update/restart:
 	 - <img src="imgs/script-setup/Pasted image 20250903143647.png" alt="Extensions that need to be updated" width="300">
 5. Alright, now hopefully we're all settled into VS Code. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
-	- <img src="imgs/script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="400">
-
+	- <img src="Pasted image 20260110193300.png" alt="VS Code Explorer pane showing script subfolder opened as workspace" width="400">
 
 ---
 
@@ -224,9 +223,9 @@ Let's do it.
 	- <img src="imgs/script-setup/Pasted image 20250903150405.png" width="600">
 5. VS Code will pop a notification to tell us it's doing the thing, and then that it's finished:
 	- <img src="imgs/script-setup/Pasted image 20250902144801.png" alt="VS Code notification: Creating Python environment" width="600">
-	- <img src="imgs/script-setup/Pasted image 20250902144851.png" alt="VS Code notification: Python environment created successfully" width="600">
+	- <img src="imgs/script-setup/Pasted image 20260110193422.png" alt="VS Code notification: Python environment created successfully" width="600">	- 
 6. To verify all's good so far, make sure that in the Explorer pane, you see a new .venv/ folder under the root of our script folder:
-	- <img src="imgs/script-setup/Pasted image 20250902144928.png" alt="VS Code Explorer showing .venv folder created" width="600">
+	- <img src="imgs/script-setup/Pasted image 20260110193447.png" alt="VS Code Explorer showing .venv folder created" width="400">
 
 The steps we just followed are VS Code's way of doing what you might see elsewhere as the following command: 
 ```bash
@@ -243,11 +242,11 @@ Finally, let's open up the integrated terminal inside VS Code to make sure it's 
 #### (Windows-only) Fix PowerShell integrated terminal issue (if needed)
 If you're on Windows, VS Code may launch PowerShell as your default terminal, which can get ornery about venv environments. This happens because PowerShell's security settings block local scripts by default. You might see an error like this:
 ```cmd
-PS C:\py-scripts\yt-dlp> & c:/py-scripts/yt-dlp/.venv/Scripts/Activate.ps1
-& : File C:\py-scripts\yt-dlp\.venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on 
+PS C:\py-scripts\manuscript2slides> & c:/py-scripts/manuscript2slides/.venv/Scripts/Activate.ps1
+& : File C:\py-scripts\manuscript2slides\.venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on 
 this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:3
-+ & c:/py-scripts/yt-dlp/.venv/Scripts/Activate.ps1
++ & c:/py-scripts/manuscript2slides/.venv/Scripts/Activate.ps1
 +   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
@@ -264,15 +263,15 @@ If you do hit an error like this, to work around it you can launch an instance o
 #### Verify the venv's ready
 Now you should see a command prompt terminal, and it should already have run a command to activate the venv; something like this, in windows:
 ```cmd
-C:\py-scripts\yt-dlp>c:/py-scripts/yt-dlp/.venv/Scripts/activate.bat
-(.venv) C:\py-scripts\yt-dlp>
+C:\py-scripts\manuscript2slides>c:/py-scripts/manuscript2slides/.venv/Scripts/activate.bat
+(.venv) C:\py-scripts\manuscript2slides>
 ```
 
 or this on Mac/Linux:
 ```bash
-source /Users/your-name/py-scripts/yt-dlp/.venv/bin/activate
-user@user-computer yt-dlp % source /Users/your-name/py-scripts/yt-dlp/.venv/bin/activate
-(.venv) user@user-computer yt-dlp %
+source /Users/your-name/py-scripts/manuscript2slides/.venv/bin/activate
+user@user-computer manuscript2slides % source /Users/your-name/py-scripts/manuscript2slides/.venv/bin/activate
+(.venv) user@user-computer manuscript2slides %
 ```
 
 Notice how the new-line has (.venv) in front. This means it's using the right environment, our newly made venv. If that didn't work right, you can try re-launching VS Code in this folder or starting a new terminal window.
@@ -332,7 +331,17 @@ Type and run this to see all the options available for manuscript2slides:
 manuscript2slides-cli --help
 ```
 
-The `--help` argument is common across most command-line tools - it shows you what the program can do and how to use it. In the example above, `--demo-docx2pptx` is an argument that tells manuscript2slides to run a demonstration.
+The `--help` argument is common across most command-line tools - it shows you what the program can do and how to use it.
+
+So that you can get a feel for using options and args, let's look at the `--demo-docx2pptx` argument we used earlier. This tells manuscript2slides to run a demonstration that converts a DOCX file to PowerPoint. There are other demo options too:
+- `--demo-docx2pptx` - Converts a Word document to PowerPoint
+- `--demo-pptx2docx` - Converts a PowerPoint presentation to Word
+- `--demo-round-trip` - Demonstrates converting in both directions
+
+Try running a different demo:
+```bash
+manuscript2slides-cli --demo-pptx2docx
+```
 
 ### Advanced Method: VS Code Debugger
 If you're going to run a script a lot and you want to use a more UI-friendly interface rather than the terminal, you can us the VS Code debugger and set up a `launch.json`. This is particularly nice if you've got specific arguments you want to run every time, and you want to customize them sometimes.
@@ -346,7 +355,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 	- <img src="imgs/script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
 5. Note that it creates the file under a new folder, called `.vscode/`, which you can see by swapping back to the Explorer pane
 	- <img src="imgs/script-setup/Pasted image 20250902160650.png" alt="VS Code Explorer showing .vscode folder and launch.json file" width="300">
-6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it. Replace the contents with something like the below. 
+6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it to pass different arguments (like the demo flags we learned about earlier). Replace the contents with something like the below.
 	- (NOTE: text starting with `//` are comments, there to explain what the line is doing in our example, which are allowed in VS Code's launch.json but not in normal JSON.)
  
 ```json
