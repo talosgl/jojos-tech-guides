@@ -7,7 +7,7 @@ Quick reference for managing Python virtual environments. Assumes you've already
 ## Create New venv for a Script
 
 ### Via VS Code (Recommended)
-1. `Ctrl+Shift+P` / `Cmd+Shift+P` → **Python: Create Environment**
+1. `Ctrl+Shift+P` / `Cmd+Shift+P` > **Python: Create Environment**
 2. Select **Venv**
 3. Choose Python interpreter
 
@@ -18,6 +18,10 @@ python3 -m venv .venv
 
 # Windows
 python -m venv .venv
+
+# If you want to specify with a specific Python version (e.g. 3.13), use:
+# python -<VERSION NUMBER> -m venv <FOLDER NAME YOU WANT NEW VENV TO CREATE AND USE>
+py -3.13 -m venv .venv-py313
 ```
 
 ---
@@ -111,7 +115,7 @@ deactivate
 ~/py-scripts/                    # or C:\py-scripts\
 ├── script-name-1/
 │   ├── .venv/                  # Virtual environment
-│   ├── your_script.py          # Your code (if any)
+│   ├── your_script.py          # Script code (if any)
 │   └── requirements.txt        # Package list (if any)
 ├── script-name-2/
 │   ├── .venv/
@@ -160,7 +164,7 @@ cd ~/py-scripts/new-script
 code .
 
 # Create venv (in VS Code)
-# Ctrl+Shift+P → Python: Create Environment → Venv
+# Ctrl+Shift+P > Python: Create Environment > Venv
 
 # Install what you need
 pip install package-name
