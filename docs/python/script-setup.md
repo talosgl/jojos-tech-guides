@@ -460,4 +460,5 @@ That's the same pattern you'll use to update other pip-installed apps you may ge
 
 ## Further Reading
 - [Python environments in VS Code](https://code.visualstudio.com/docs/python/environments#_creating-environments) - Official VS Code documentation on using virtual environments
-- [Learning Resources](learning-resources.md) - Links I've collected to other helpful (external) tutorials and guides
+- [Learning Resources](../learning-resources.md) - Links I've collected to other helpful (external) tutorials and guides
+- [Python Virtual Environment Cheat Sheet](venv-cheat-sheet.md) - For later, when you want to refer to the steps covered in the detailed guide for a second, third, fourth script.
