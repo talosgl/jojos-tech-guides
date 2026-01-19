@@ -1,7 +1,7 @@
-# Get Set Up to Install and Run Python Scripts on Your Computer
+# Get Set Up to Install and Run Python Scripts on Your Computer with pip
 
 ## Overview
-This is a quick and easy guide to help you get set up to run Python scripts on your computer. We'll cover the steps necessary for Windows 11, macOS, and Linux (via Ubuntu).
+This is a quick and easy guide to help you get set up to run Python scripts on your computer. In particular this guide will show you how to use pip to install python programs. We'll cover the steps necessary for Windows 11, macOS, and Linux (via Ubuntu).
 
 ### Audience
 Tech-savvy folks who:
@@ -13,10 +13,10 @@ Tech-savvy folks who:
 We're going to be using the terminal (also called the command line, console, or shell), but it's completely fine if you're not used to doing that; you don't need existing experience. (Except if you're on Linux; sorry, some existing terminal experience will be useful for y'all.)
 
 ### Goal
-Get from "I found this useful .py script" to "it's running on my computer" with minimal fuss and a sustainable setup for future tools.
+Get from "I found this useful .py script" and "but what is this pip thing it says to use to install it?" to "it's running on my computer" with minimal fuss and a sustainable setup for future tools.
 
 ### Notes
-1. If you're viewing this on the web via GitHub's "Code" preview, you can open up an Outline using the outline icon (usually in the top-right).
+1. If you're viewing this on the web via GitHub's "Code" preview, you can open up an Outline using the outline icon (usually in the top-right). That'll show you the general structure of the guide.
 	-  <img src="imgs/script-setup/Pasted image 20250903160236.png" alt="gh outline note" width="100">
 2. As an added bonus, you can take what you set up & learn here and do your own Python script development in future, but this guide only covers installing and running other folks' scripts.
 
@@ -46,7 +46,7 @@ Use the default installer settings, along with checking the box for **Add python
 #### Mac:
 <img src="imgs/script-setup/Pasted image 20250903144155.png" alt="macOS installer button" width="300"> <img src="imgs/script-setup/Pasted image 20250903144140.png" alt="macOS package" width ="300">
 
-1. Step through the installation. 
+1. Initiate the installation by double-clicking the pkg file, and step through it.
 2. On the very last screen you may see this message about running some special post-install commands. (I'll be honest, I don't know what this means, but I'll walk you through the steps to do what it's saying so we don't hit issues with pip later.)
 	- <img src="imgs/script-setup/Pasted image 20250903144500.png" alt="macOS installer message about SSL" width="400">
 3. Go to the finder location for Python 3.13; the installer should have popped it up, and double-click the "**Install Certificates.command"** file:
@@ -135,6 +135,9 @@ Let's take a quick tour of the UI and what I'll be calling different parts of it
 	-  <img src="imgs/script-setup/Pasted image 20250903133052.png" width="600">
 3. Once that's finished, you can minimize VS Code for now.
 
+#### What is this, and why am I installing it?
+Although we installed Python support on our machine earlier, VS Code needs some additional things to give us the best experience while we work with Python. Rather than bloating the base IDE install for VS Code with support for every language under the sun, these are offered as extensions. The Python extension collection we are installing is official and supported by the IDE creator, Microsoft.
+
 ---
 
 ### 5. Get Folder Structure Ready
@@ -148,18 +151,18 @@ You can create this new folder wherever you wish; but here's my suggested spot f
 
 Create this folder using your operating system's file manager: Navigate to the parent location (c:/, or your home ~/) folder, right-click, and select "New Folder" in Windows/Linux; or, in Mac's Finder, use `Cmd+Shift+N`.
 
-Windows:
+#### Windows:
 1. <img src="imgs/script-setup/Pasted image 20250902131953.png" alt="Windows File Explorer showing C: drive" width="600">
 2. <img src="imgs/script-setup/Pasted image 20250902141805.png" alt="Creating new folder in Windows" width="600">
 
 
 
-Mac:
+#### Mac:
 1. <img src="imgs/script-setup/Pasted image 20250903143215.png" width="300">
 2. <img src="imgs/script-setup/Pasted image 20250903143352.png" width="100">
 
 
-Linux:
+#### Linux:
 - <img src="imgs/script-setup/Screenshot from 2025-09-03 16-51-06.png" width="300">
 
 
@@ -170,14 +173,14 @@ Linux:
 The steps in this section will need to be repeated for each different Python script you want to install and run. We'll go into a little more depth here so you get an idea of why you are doing what you're doing; my hope is that'll help you re-apply them later to future scripts!
 
 ### 1. Create a Folder for the Python script we'll install
-To get set up to install our first Python script, let's make a new folder inside the one we just made. For our example we're going to install `manuscript2slides`, so let's create a folder with that name.
+To get set up to install our first Python script, let's make a new folder inside the one we just made. For our example, we're going to install `manuscript2slides`, so let's create a folder with that name. To be clear, you *could* name the folder whatever you want, like `taco_time` or `ms2slides`; we're just using the name of the script because it makes it easier to remember and find things later.
 
-1. Navigate to the py-scripts folder you created earlier.
+1. Navigate to the `py-scripts` folder you created earlier.
 	- Windows: `C:\py-scripts\`
 	- Mac/Linux: `~/py-scripts/`
-1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use `Cmd+Shift+N` (Mac).
-2. Name it after the script you want to install - for our example, use `manuscript2slides`
-3. Verify you've got the right folder structure:
+2. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use `Cmd+Shift+N` (Mac).
+3. Name it after the script you want to install - for our example, use `manuscript2slides`
+4. Verify you've got the right folder structure:
 	- Windows: `C:\py-scripts\manuscript2slides\`
 		- <img src="imgs/script-setup/Pasted image 20260110193005.png" alt="Creating manuscript2slides folder" width="400">
 	- Mac/Linux: `~/py-scripts/manuscript2slides/`
@@ -189,7 +192,7 @@ This folder will contain everything related to this one script.
 ---
 
 ### 2. Open new script folder in VS Code
-We next want to open this folder as a "workspace" in VS Code.
+VS Code scopes its file tree view to a specific folder as its "workspace", and we next want to open the folder we just created as the "workspace" in VS Code.
 
 1. Launch VS Code on your computer again (or maximize it from the tray).
 2. From inside VS Code, go to File > Open Folder, then navigate to the folder we just created to open it:
@@ -203,15 +206,15 @@ We next want to open this folder as a "workspace" in VS Code.
 
 3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `py-scripts/` or only per-script.)
 		<img src="imgs/script-setup/mac_manage_trust_popup.png" width ="400">
-4. You may also get a notification from the extensions icon that the app needs to update/restart:
+4. You may also get a notification from the extensions icon that the app needs to update/restart; go ahead if so:
 	 - <img src="imgs/script-setup/Pasted image 20250903143647.png" alt="Extensions that need to be updated" width="300">
 5. Alright, now hopefully we're all settled into VS Code. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
-	- <img src="Pasted image 20260110193300.png" alt="VS Code Explorer pane showing script subfolder opened as workspace" width="400">
+	- <img src="imgs/script-setup/Pasted image 20260110193300.png" alt="VS Code Explorer pane showing script subfolder opened as workspace" width="400">
 
 ---
 
 ### 3. Set up Virtual Environment ( `venv`) for this specific script
-We're ready to set up a "virtual environment", or [venv](https://docs.python.org/3/library/venv.html), in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python without needing to worry about what such-and-such script might've done.
+We're ready to set up the "virtual environment", or [venv](https://docs.python.org/3/library/venv.html), in which we'll run our script. With Python, the ideal setup is to run each program or script in its own "runtime environment," rather than let it loose in your general operating system's environment. There are a lot of reasons why, but for those of us just running a script, the most practical are 1) it's safer and 2) it makes it easier for us to install and manage per-script dependencies on other libraries or apps without polluting or messing with our computer's global Python setup. Every time we want to run a script, we'll start fresh with the baseline we got when we installed Python, without needing to worry about what such-and-such script might've done.
 
 Let's do it. 
 1. In VS Code, open the Command Palette by going to View > Command Palette or using the hotkey:
@@ -221,13 +224,13 @@ Let's do it.
 	- <img src="imgs/script-setup/Pasted image 20250902144605.png" alt="VS Code Command Palette showing Python Create Environment option" width="600">
 3. Select Venv from the options:
 	- <img src="imgs/script-setup/Pasted image 20250902144651.png" alt="Python environment type selection showing Venv option" width="600">
-4. Select the Global Python interpreter to kick off our venv. If you see multiple options, select the newest one. (Mac and Linux sometimes already have an older version of Python installed; we want to make sure to use the one we just installed!)
+4. Select the Global Python interpreter to kick off our venv. If you see multiple options, select the newest one. (Mac and Linux sometimes already have an older version of Python installed; in our case, we want to make sure to use the one we just installed.)
 	- <img src="imgs/script-setup/Pasted image 20250902144731.png" alt="Python interpreter selection dialog" width="600">
 	- <img src="imgs/script-setup/Pasted image 20250903150405.png" width="600">
 5. VS Code will pop a notification to tell us it's doing the thing, and then that it's finished:
 	- <img src="imgs/script-setup/Pasted image 20250902144801.png" alt="VS Code notification: Creating Python environment" width="600">
 	- <img src="imgs/script-setup/Pasted image 20260110193422.png" alt="VS Code notification: Python environment created successfully" width="600">	- 
-6. To verify all's good so far, make sure that in the Explorer pane, you see a new .venv/ folder under the root of our script folder:
+6. To verify all's good so far, make sure that in the Explorer pane you see a new `.venv/` folder under the root of our script folder:
 	- <img src="imgs/script-setup/Pasted image 20260110193447.png" alt="VS Code Explorer showing .venv folder created" width="400">
 
 The steps we just followed are VS Code's way of doing what you might see elsewhere as the following command: 
@@ -242,6 +245,8 @@ python3 -m venv .venv
 # python -<VERSION NUMBER> -m venv <FOLDER NAME YOU WANT NEW VENV TO CREATE AND USE>
 py -3.13 -m venv .venv-py313
 ```
+
+If anything ever gets screwy with your `venv`, you can always delete that `.venv/` folder and repeat the Step 3 steps again to make a new one from scratch. (You'll just need to redo the pip install steps below afterward.)
 
 ---
 
@@ -272,7 +277,7 @@ If you do hit an error like this, to work around it you can launch an instance o
 
 
 #### Verify the venv's ready
-Now you should see a command prompt terminal, and it should already have run a command to activate the venv; something like this, in windows:
+Now you should see a terminal, and it should already have run a command to activate the venv; something like this, in Windows:
 ```cmd
 C:\py-scripts\manuscript2slides>c:/py-scripts/manuscript2slides/.venv/Scripts/activate.bat
 (.venv) C:\py-scripts\manuscript2slides>
@@ -285,7 +290,7 @@ user@user-computer manuscript2slides % source /Users/your-name/py-scripts/manusc
 (.venv) user@user-computer manuscript2slides %
 ```
 
-Notice how the new-line has (.venv) in front. This means it's using the right environment, our newly made venv. If that didn't work right, you can try re-launching VS Code in this folder or starting a new terminal window.
+Notice how the new-line has (.venv) in front. This means it is indeed using the right environment, our newly made venv. If that didn't work right, you can try re-launching VS Code in this folder or starting a new terminal window.
 
 Stay in the venv-activated terminal and move on to the next section!
 
@@ -294,9 +299,9 @@ Stay in the venv-activated terminal and move on to the next section!
 ### 5. Download / Install the Python Script into the venv using pip
 It's time to install our example script, `manuscript2slides`!
 
-We're going to use the official Python Package installer, which is called `pip` for some unholy reason. Installable packages can be found on the official site at https://pypi.org/.
+We're going to use the official Python Package installer, which is called `pip` for some unholy reason. You can browse available packages and their documentation on the official site at https://pypi.org/, then install them with the steps we're about to cover (`pip install <package-name>`).
 
-You can read about manuscript2slides on the pip site at https://pypi.org/project/manuscript2slides/ or you can check out its open source repository at https://github.com/basnijholt/manuscript2slides.
+For example, you can read about manuscript2slides on the pip site at https://pypi.org/project/manuscript2slides/ and see information about how it works, what license it uses, and where its source code lives (https://github.com/talosgl/manuscript2slides).
 
 Steps:
 1. Type the following into the terminal on a new line: `pip install manuscript2slides`
@@ -306,35 +311,42 @@ Steps:
 Collecting manuscript2slides
   Downloading manuscript2slides-#.#.#-py3-none-any.whl.metadata
 Downloading manuscript2slides-#.#.#-py3-none-any.whl
-Installing collected packages: manuscript2slides
-Successfully installed manuscript2slides-#.#.#
+[...]
+Installing collected packages: XlsxWriter, typing_extensions, tomli-w, shiboken6, platformdirs, Pillow, lxml, python-pptx, python-docx, PySide6_Essentials, PySide6_Addons, PySide6, manuscript2slides
+Successfully installed Pillow-12.1.0 PySide6-6.10.1 PySide6_Addons-6.10.1 PySide6_Essentials-6.10.1 XlsxWriter-3.2.9 lxml-6.0.2 manuscript2slides-0.1.4 platformdirs-4.5.1 python-docx-1.2.0 python-pptx-0.6.23 shiboken6-6.10.1 tomli-w-1.2.0 typing_extensions-4.15.0
 ```
 
 ---
 
 ## Part 3: Steps to run the script from the venv inside VS Code
-Now we're ready to run the script. Let's walk through a couple methods here, from "most barebones" to "most fancy/complicated."
+Now we're ready to run the script. `manuscript2slides` offers a visual, graphical user interface (GUI). We still need to use the terminal to launch the GUI, but otherwise, we can interact with and use the program from that GUI. However, some scripts you find out there may be command-line only. For this reason, we will cover both methods of running Python scripts in the next section.
 
-### Barebones Method: Terminal Commands
-Let's start with the most straightforward approach - running the script directly from the terminal.
+### Use the terminal to launch a Python script GUI
 
 1. Copy the following command in your usual way (`Ctrl+C` or `Cmd+C`).
 ```bash
 manuscript2slides
 ```
-2. Pasting into terminals is sort of annoying. You can't really use `Ctrl/Cmd+C` and `Ctrl/Cmd+V` like we're used to. To get around this, you could type the entire command out (don't subject yourself to that!), or you could:
-	- Windows Command Prompt: Right-click inside the terminal window to paste, or use `Ctrl+Shift+V`
- 	- Windows PowerShell: Right-click inside the terminal window to paste, or use `Ctrl+V` (newer versions)
-  	- Mac Terminal: `Cmd+V` to paste
+2. Pasting into terminals is sort of annoying. You can't always use `Ctrl/Cmd+C` and `Ctrl/Cmd+V` like we're used to. To get around this, you can type the command out (easy for this case, but might be annoying for longer scripts), or you can right-click in the terminal window and select Paste (most OSes), or try the following hotkeys:
+	- Windows Command Prompt: Use `Ctrl+Shift+V`
+	- Windows PowerShell: Right-click inside the terminal window to paste, or use `Ctrl+V` (newer versions)
+	- Mac Terminal: `Cmd+V` to paste
 	- Linux Terminal: `Ctrl+Shift+V` to paste
 3. Press enter if needed to get to a new line, and the GUI application should launch!
+	- <img src="imgs/script-setup/ms2slides2_docx2pptx.png" alt="manuscript2slides GUI" width="400">
+4. `manuscript2slides` converts .docx documents to .pptx slide decks (and back). If you click the "Demo" tab, you can see a quick demo of this process with sample files. Or you can try loading in your own .docx or .pptx and trying out the different options.
+	- <img src="imgs/script-setup/ms2slides_demo.png" alt="manuscript2slides demo tab" width="400">
 
-You can also try the command-line version with a demo:
+### Understanding and Running Python scripts from a Command Line Interface (CLI)
+Some pip-installed tools are CLI-only (meaning they have no GUI), and you'll interact with them entirely through the terminal. Here's how that works, using the CLI mode of manuscript2slides as a safe way to practice.
+
+You can also try the command-line version of manuscript2slides with the below line. Notice that the command is slightly different (`-cli` is added to the command name) and that we are passing an "option", `--demo-docx2pptx`. Paste it into your terminal as we discussed above.
 ```bash
 manuscript2slides-cli --demo-docx2pptx
 ```
 
-### Understanding Command Arguments
+You should see output in your terminal showing that a demo conversion has occurred, and where the output files ended up.
+
 We can pass in more "arguments" or "args" to customize how the script runs. Arguments are extra instructions you give to a program when you run it, like options or settings.
 
 Type and run this to see all the options available for manuscript2slides:
@@ -342,7 +354,7 @@ Type and run this to see all the options available for manuscript2slides:
 manuscript2slides-cli --help
 ```
 
-The `--help` argument is common across most command-line tools - it shows you what the program can do and how to use it.
+The `--help` argument is common across most command-line tools; it shows you what the program can do and how to use it.
 
 So that you can get a feel for using options and args, let's look at the `--demo-docx2pptx` argument we used earlier. This tells manuscript2slides to run a demonstration that converts a DOCX file to PowerPoint. There are other demo options too:
 - `--demo-docx2pptx` - Converts a Word document to PowerPoint
@@ -355,7 +367,7 @@ manuscript2slides-cli --demo-pptx2docx
 ```
 
 ### Advanced Method: VS Code Debugger
-If you're going to run a script a lot and you want to use a more UI-friendly interface rather than the terminal, you can us the VS Code debugger and set up a `launch.json`. This is particularly nice if you've got specific arguments you want to run every time, and you want to customize them sometimes.
+If you're going to run a script a lot and you want to use a more UI-friendly interface rather than the terminal, you can use the VS Code debugger and set up a `launch.json`. This is particularly nice for CLI-only scripts, and especially if you have specific arguments you want to run every time, and you want to customize them sometimes. It doesn't make a whole lot of sense for `manuscript2slides`, but we can still get it working so you get the practice.
 
 1. Click the "Run and Debug" icon in the left sidebar of VS Code (looks like a play button with a bug) (or use `Ctrl+Shift+D` (Windows/Linux) or `Cmd+Shift+D` (Mac))
 	- <img src="imgs/script-setup/Pasted image 20250902160405.png" alt="VS Code Run and Debug panel icon" width="300"> 
@@ -366,7 +378,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 	- <img src="imgs/script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
 5. Note that it creates the file under a new folder, called `.vscode/`, which you can see by swapping back to the Explorer pane
 	- <img src="imgs/script-setup/Pasted image 20250902160650.png" alt="VS Code Explorer showing .vscode folder and launch.json file" width="300">
-6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it to pass different arguments (like the demo flags we learned about earlier). Replace the contents with something like the below.
+6. Now we'll edit the generated `launch.json`. VS Code creates a basic file, but we want to customize it to pass different arguments (like the demo flags we learned about earlier). Replace the contents with something like the below.
 	- (NOTE: text starting with `//` are comments, there to explain what the line is doing in our example, which are allowed in VS Code's launch.json but not in normal JSON.)
  
 ```json
@@ -389,7 +401,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
             "name": "manuscript2slides: CLI Demo",
             "type": "debugpy",
             "request": "launch",
-            "module": "manuscript2slides",
+            "module": "manuscript2slides-cli",
             "args": [
                 "--demo-docx2pptx"
             ],
@@ -421,7 +433,7 @@ Let's review what we've done so you can reference it later.
 
 ---
 ## Updating scripts with pip
-If you get an error when you try to run a script later--like if you come back and try to use it a few weeks from now--it may tell you that you're running an outdated version. You can update using pip, with this command:
+If you get an error when you try to run a script later—like if you come back and try to use it a few weeks from now—it may tell you that you're running an outdated version. You can update using pip, with this command:
 
 ```
 pip install --upgrade manuscript2slides
@@ -438,9 +450,11 @@ That's the same pattern you'll use to update other pip-installed apps you may ge
 - [internetarchive cli tool `ia`](https://pypi.org/project/internetarchive/) - Command-line interface to Internet Archive
 
 **Note**: If the script you want isn't showing up on the PyPi site as pip-installable, it may need a different installation method - check the script's documentation for details. Other common flows are:
-- get source code from as a zip from GitHub
+- get source code as a zip from GitHub
 - clone the repo files locally from GitHub or GitLab
 - use curl to download binaries
+
+**Another Note:** You might find someday you need a specific, *older* version of Python to run a script, because of some dependency. You can install different versions of Python on the same computer, and then indicate which version a venv should use.
 
 ---
 
