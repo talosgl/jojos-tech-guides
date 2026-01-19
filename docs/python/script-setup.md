@@ -170,19 +170,19 @@ Linux:
 The steps in this section will need to be repeated for each different Python script you want to install and run. We'll go into a little more depth here so you get an idea of why you are doing what you're doing; my hope is that'll help you re-apply them later to future scripts!
 
 ### 1. Create a Folder for the Python script we'll install
-To get set up to install our first Python script, let's make a new folder inside the one we just made. For our example we're going to install `yt-dlp`, so let's create a folder with that name.
+To get set up to install our first Python script, let's make a new folder inside the one we just made. For our example we're going to install `manuscript2slides`, so let's create a folder with that name.
 
 1. Navigate to the py-scripts folder you created earlier.
 	- Windows: `C:\py-scripts\`
 	- Mac/Linux: `~/py-scripts/`
 1. Create a new subfolder for this specific script. Right-click in the empty space and select "New Folder" (Windows/Linux) or use `Cmd+Shift+N` (Mac).
-2. Name it after the script you want to install - for our example, use `yt-dlp`
+2. Name it after the script you want to install - for our example, use `manuscript2slides`
 3. Verify you've got the right folder structure:
-	- Windows: `C:\py-scripts\yt-dlp\`
-		- <img src="imgs/script-setup/Pasted image 20250902141839.png" alt="Creating yt-dlp folder" width="400">
-	- Mac/Linux: `~/py-scripts/yt-dlp/`
-		- <img src="imgs/script-setup/Pasted image 20250903143448.png" width="200">
-		- <img src="imgs/script-setup/Screenshot from 2025-09-03 16-51-35.png" width="400">
+	- Windows: `C:\py-scripts\manuscript2slides\`
+		- <img src="imgs/script-setup/Pasted image 20260110193005.png" alt="Creating manuscript2slides folder" width="400">
+	- Mac/Linux: `~/py-scripts/manuscript2slides/`
+		- <img src="imgs/script-setup/mac_create_folder_for_script.png" width="400">
+		- <img src="imgs/script-setup/ubuntu_new_folder.png" width="400">
 
 This folder will contain everything related to this one script.
 
@@ -194,17 +194,19 @@ We next want to open this folder as a "workspace" in VS Code.
 1. Launch VS Code on your computer again (or maximize it from the tray).
 2. From inside VS Code, go to File > Open Folder, then navigate to the folder we just created to open it:
 	- <img src="imgs/script-setup/Pasted image 20250902143052.png" alt="VS Code File menu Open Folder option" width="500">
-	- <img src="imgs/script-setup/Pasted image 20250902143143.png" alt="VS Code folder selection dialog" width="500">
-	- <img src="imgs/script-setup/Screenshot from 2025-09-03 16-52-13.png" width="600">
+	- Windows:
+		- <img src="imgs/script-setup/Pasted image 20260110193145.png" alt="VS Code folder selection dialog" width="500">
+	- Mac:
+		- <img src="imgs/script-setup/mac_open_folder_in_vscode.png" width="400">
+	- Linux:
+		- <img src="imgs/script-setup/ubuntu_open_folder_in_vscode.png" width="400">
 
 3. You might get prompted with a message: "Do you trust the authors of the files in this folder?" Read through this and make sure you understand what it is asking, then select "Yes, I trust the authors". (It's up to you if you want to do this for the whole parent folder `py-scripts/` or only per-script.)
-	- <img src="imgs/script-setup/Pasted image 20250903133609.png" width="300">
-	- <img src="imgs/script-setup/Pasted image 20250903143554.png" width="300">
+		<img src="imgs/script-setup/mac_manage_trust_popup.png" width ="400">
 4. You may also get a notification from the extensions icon that the app needs to update/restart:
 	 - <img src="imgs/script-setup/Pasted image 20250903143647.png" alt="Extensions that need to be updated" width="300">
 5. Alright, now hopefully we're all settled into VS Code. You can check it worked by verifying the "root" in the Explorer pane of VS Code shows the folder name (in upper-caps):
-	- <img src="imgs/script-setup/Pasted image 20250902143233.png" alt="VS Code Explorer pane showing YT-DLP folder" width="400">
-
+	- <img src="Pasted image 20260110193300.png" alt="VS Code Explorer pane showing script subfolder opened as workspace" width="400">
 
 ---
 
@@ -224,13 +226,21 @@ Let's do it.
 	- <img src="imgs/script-setup/Pasted image 20250903150405.png" width="600">
 5. VS Code will pop a notification to tell us it's doing the thing, and then that it's finished:
 	- <img src="imgs/script-setup/Pasted image 20250902144801.png" alt="VS Code notification: Creating Python environment" width="600">
-	- <img src="imgs/script-setup/Pasted image 20250902144851.png" alt="VS Code notification: Python environment created successfully" width="600">
+	- <img src="imgs/script-setup/Pasted image 20260110193422.png" alt="VS Code notification: Python environment created successfully" width="600">	- 
 6. To verify all's good so far, make sure that in the Explorer pane, you see a new .venv/ folder under the root of our script folder:
-	- <img src="imgs/script-setup/Pasted image 20250902144928.png" alt="VS Code Explorer showing .venv folder created" width="600">
+	- <img src="imgs/script-setup/Pasted image 20260110193447.png" alt="VS Code Explorer showing .venv folder created" width="400">
 
 The steps we just followed are VS Code's way of doing what you might see elsewhere as the following command: 
 ```bash
-python -m venv .venv.
+# ".venv" is just the conventional name of the directory for venv to store itself; you can call it whatever you want
+python -m venv .venv
+
+# or on Unix-based systems:
+python3 -m venv .venv
+
+# If you want to specify with a specific Python version (e.g. 3.13), use:
+# python -<VERSION NUMBER> -m venv <FOLDER NAME YOU WANT NEW VENV TO CREATE AND USE>
+py -3.13 -m venv .venv-py313
 ```
 
 ---
@@ -243,11 +253,11 @@ Finally, let's open up the integrated terminal inside VS Code to make sure it's 
 #### (Windows-only) Fix PowerShell integrated terminal issue (if needed)
 If you're on Windows, VS Code may launch PowerShell as your default terminal, which can get ornery about venv environments. This happens because PowerShell's security settings block local scripts by default. You might see an error like this:
 ```cmd
-PS C:\py-scripts\yt-dlp> & c:/py-scripts/yt-dlp/.venv/Scripts/Activate.ps1
-& : File C:\py-scripts\yt-dlp\.venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on 
+PS C:\py-scripts\manuscript2slides> & c:/py-scripts/manuscript2slides/.venv/Scripts/Activate.ps1
+& : File C:\py-scripts\manuscript2slides\.venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on 
 this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:3
-+ & c:/py-scripts/yt-dlp/.venv/Scripts/Activate.ps1
++ & c:/py-scripts/manuscript2slides/.venv/Scripts/Activate.ps1
 +   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
@@ -264,15 +274,15 @@ If you do hit an error like this, to work around it you can launch an instance o
 #### Verify the venv's ready
 Now you should see a command prompt terminal, and it should already have run a command to activate the venv; something like this, in windows:
 ```cmd
-C:\py-scripts\yt-dlp>c:/py-scripts/yt-dlp/.venv/Scripts/activate.bat
-(.venv) C:\py-scripts\yt-dlp>
+C:\py-scripts\manuscript2slides>c:/py-scripts/manuscript2slides/.venv/Scripts/activate.bat
+(.venv) C:\py-scripts\manuscript2slides>
 ```
 
 or this on Mac/Linux:
 ```bash
-source /Users/your-name/py-scripts/yt-dlp/.venv/bin/activate
-user@user-computer yt-dlp % source /Users/your-name/py-scripts/yt-dlp/.venv/bin/activate
-(.venv) user@user-computer yt-dlp %
+source /Users/your-name/py-scripts/manuscript2slides/.venv/bin/activate
+user@user-computer manuscript2slides % source /Users/your-name/py-scripts/manuscript2slides/.venv/bin/activate
+(.venv) user@user-computer manuscript2slides %
 ```
 
 Notice how the new-line has (.venv) in front. This means it's using the right environment, our newly made venv. If that didn't work right, you can try re-launching VS Code in this folder or starting a new terminal window.
@@ -282,29 +292,22 @@ Stay in the venv-activated terminal and move on to the next section!
 ---
 
 ### 5. Download / Install the Python Script into the venv using pip
-It's time to install our example script, `yt-dlp`!
+It's time to install our example script, `manuscript2slides`!
 
 We're going to use the official Python Package installer, which is called `pip` for some unholy reason. Installable packages can be found on the official site at https://pypi.org/.
 
-You can read about yt-dlp on the pip site at https://pypi.org/project/yt-dlp/ or you can check out its open source repository at https://github.com/yt-dlp/yt-dlp.
+You can read about manuscript2slides on the pip site at https://pypi.org/project/manuscript2slides/ or you can check out its open source repository at https://github.com/basnijholt/manuscript2slides.
 
 Steps:
-1. Type the following into the terminal on a new line: `pip install yt-dlp`
+1. Type the following into the terminal on a new line: `pip install manuscript2slides`
 2. You should see something like...
 ```
-(.venv) C:\py-scripts\yt-dlp>pip install yt-dlp
-Collecting yt-dlp
-  Downloading yt_dlp-20##.##.##-py3-none-any.whl.metadata (175 kB)
-Downloading yt_dlp-20##.#.##-py3-none-any.whl (3.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 50.7 MB/s  0:00:00
-Installing collected packages: yt-dlp
-Successfully installed yt-dlp-20##.##.##
-```
-
-
-If you see this warning as `yt-dlp` installs, make sure you installed the latest Python from the first part of the guide:
-```bash
-Deprecated Feature: Support for Python version 3.9 has been deprecated. Please update to Python 3.10 or above
+(.venv) C:\py-scripts\manuscript2slides>pip install manuscript2slides
+Collecting manuscript2slides
+  Downloading manuscript2slides-#.#.#-py3-none-any.whl.metadata
+Downloading manuscript2slides-#.#.#-py3-none-any.whl
+Installing collected packages: manuscript2slides
+Successfully installed manuscript2slides-#.#.#
 ```
 
 ---
@@ -317,50 +320,38 @@ Let's start with the most straightforward approach - running the script directly
 
 1. Copy the following command in your usual way (`Ctrl+C` or `Cmd+C`).
 ```bash
-yt-dlp "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+manuscript2slides
 ```
 2. Pasting into terminals is sort of annoying. You can't really use `Ctrl/Cmd+C` and `Ctrl/Cmd+V` like we're used to. To get around this, you could type the entire command out (don't subject yourself to that!), or you could:
 	- Windows Command Prompt: Right-click inside the terminal window to paste, or use `Ctrl+Shift+V`
  	- Windows PowerShell: Right-click inside the terminal window to paste, or use `Ctrl+V` (newer versions)
   	- Mac Terminal: `Cmd+V` to paste
 	- Linux Terminal: `Ctrl+Shift+V` to paste
-3. Press enter if needed to get to a new line, and...
-4. ...watch yt-dlp do its thing:
-```bash
-(.venv) C:\py-scripts\yt-dlp>yt-dlp "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ 
-[youtube] dQw4w9WgXcQ: Downloading webpage ...
-```
-4. NOTE: You may get a warning message `WARNING: ffmpeg not found. The downloaded format may not be the best available...` — for our purposes, it's okay to ignore this warning.
-5. Find the result of our download in the script's root folder, visible inside VS Code:
-	- <img src="imgs/script-setup/Pasted image 20250902151109.png" alt="Downloaded video file visible in VS Code Explorer" width="600">
+3. Press enter if needed to get to a new line, and the GUI application should launch!
 
-### Sidequest: Understanding Command Arguments
-We can pass in more "arguments" or "args" to customize how the script runs. Type and run this to see all the options:
+You can also try the command-line version with a demo:
 ```bash
-yt-dlp --help
+manuscript2slides-cli --demo-docx2pptx
 ```
 
-So that you can get a feel for using options and args, let's try one extra arg. `-P` is an option for specifying what folder in which we want the video to download into. If we do `-P my-vids`, `yt-dlp` will auto-create a folder under our current spot, and put the new video inside it. If you want it to download into your OS's standard "videos" location, you could do:
-- Windows: `-P %USERPROFILE%\Videos\`
-- Mac: `-P ~/Movies/`
-- Linux: `-P ~/Videos/`
+### Understanding Command Arguments
+We can pass in more "arguments" or "args" to customize how the script runs. Arguments are extra instructions you give to a program when you run it, like options or settings.
 
-Try running the command like this for a custom folder:
+Type and run this to see all the options available for manuscript2slides:
 ```bash
-yt-dlp -P rickroll-vids "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+manuscript2slides-cli --help
 ```
 
-Here are some other examples you can try that we won't go into depth on here. Check out https://github.com/yt-dlp/yt-dlp#readme for more details.
+The `--help` argument is common across most command-line tools - it shows you what the program can do and how to use it.
+
+So that you can get a feel for using options and args, let's look at the `--demo-docx2pptx` argument we used earlier. This tells manuscript2slides to run a demonstration that converts a DOCX file to PowerPoint. There are other demo options too:
+- `--demo-docx2pptx` - Converts a Word document to PowerPoint
+- `--demo-pptx2docx` - Converts a PowerPoint presentation to Word
+- `--demo-round-trip` - Demonstrates converting in both directions
+
+Try running a different demo:
 ```bash
-# custom path and filename
-yt-dlp -P my-downloads -o "%(title)s.%(ext)s" "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-
-# get info about video without actually downloading it
-yt-dlp --print "%(title)s by %(uploader)s - %(duration_string)s" "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-
-# download a low quality version
-yt-dlp -P small-files -f "worst[height>=360]" "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+manuscript2slides-cli --demo-pptx2docx
 ```
 
 ### Advanced Method: VS Code Debugger
@@ -375,7 +366,7 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 	- <img src="imgs/script-setup/Pasted image 20250902160622.png" alt="VS Code Python debugger template selection" width="600">
 5. Note that it creates the file under a new folder, called `.vscode/`, which you can see by swapping back to the Explorer pane
 	- <img src="imgs/script-setup/Pasted image 20250902160650.png" alt="VS Code Explorer showing .vscode folder and launch.json file" width="300">
-6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it. Replace the contents with something like the below. 
+6. Now we'll edit the generated launch.json. VS Code creates a basic file, but we want to customize it to pass different arguments (like the demo flags we learned about earlier). Replace the contents with something like the below.
 	- (NOTE: text starting with `//` are comments, there to explain what the line is doing in our example, which are allowed in VS Code's launch.json but not in normal JSON.)
  
 ```json
@@ -385,37 +376,24 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
-            "name": "yt-dlp: Download Video",
+            "name": "manuscript2slides: Launch GUI",
             "type": "debugpy",
             "request": "launch",
-            "module": "yt_dlp",
-            "args": [
-                "-P", "downloads", // the folder. under the workspace root, where the download will go
-                "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            ],
+            "module": "manuscript2slides",
+            "args": [],
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}"
         },
         {
-            "name": "yt-dlp: Custom URL",
-            "type": "debugpy", 
+            "name": "manuscript2slides: CLI Demo",
+            "type": "debugpy",
             "request": "launch",
-            "module": "yt_dlp",
+            "module": "manuscript2slides",
             "args": [
-                "-P", "custom-downloads", // the folder where the download will go
-                "${input:videoURL}"
+                "--demo-docx2pptx"
             ],
             "console": "integratedTerminal"
-        }
-    ],
-    "inputs": [
-        {
-            "id": "videoURL", // we're making our own custom arg name here for the debugger itself, to prompt us for a custom URL
-            "description": "Enter video URL",
-            "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // if you forget to enter one, you get to see Rick again
-            "type": "promptString" // when you use this debug mode, VS Code's UI will prompt you for the URL
         }
     ]
 }
@@ -425,11 +403,8 @@ If you're going to run a script a lot and you want to use a more UI-friendly int
 	- In the Run and Debug panel, you'll see a dropdown with your configuration names
 		- <img src="imgs/script-setup/Pasted image 20250902160522.png" alt="VS Code debug configuration dropdown" width="150">
 	- Select one and click the green play button.
-	- You can tell the "Download Video" one worked if you now have a folder called "downloads" under the yt-dlp folder, and it has Rick's video in it.
-	- For the "Custom URL" option, it'll prompt you to enter a URL, and you can use the same one. For this one, after it runs, you should see a "custom-downloads/" folder with the video in it.
-		- <img src="imgs/script-setup/Pasted image 20250902160729.png" alt="VS Code input prompt for custom video URL">
-8. After all our steps, we've got a lot of Rick:
-	- <img src="imgs/script-setup/Pasted image 20250903151217.png" width="300">
+	- The "Launch GUI" option will open the manuscript2slides application window
+	- The "CLI Demo" option will run a command-line demonstration
 
 Woo, we did it!
 
@@ -446,10 +421,10 @@ Let's review what we've done so you can reference it later.
 
 ---
 ## Updating scripts with pip
-If you get an error when you try to run yt-dlp later--like if you come back and try to use it a few weeks from now--it may tell you that you're running an outdated version. You can update using pip, with this command:
+If you get an error when you try to run a script later--like if you come back and try to use it a few weeks from now--it may tell you that you're running an outdated version. You can update using pip, with this command:
 
 ```
-pip install --upgrade yt-dlp
+pip install --upgrade manuscript2slides
 ```
 
 That's the same pattern you'll use to update other pip-installed apps you may get later: `pip install --upgrade {app_name}`
@@ -457,9 +432,10 @@ That's the same pattern you'll use to update other pip-installed apps you may ge
 ---
 
 ## Other Useful Python Scripts you can check out and install with pip
-- [gallery-dl](https://pypi.org/project/gallery-dl/)
-- [csvkit](https://pypi.org/project/csvkit/)
-- [internetarchive cli tool `ia`](https://pypi.org/project/internetarchive/)
+- [yt-dlp](https://pypi.org/project/yt-dlp/) - Video downloader (Note: As of 2025, requires a JavaScript runtime like Deno for full YouTube support)
+- [gallery-dl](https://pypi.org/project/gallery-dl/) - Download image galleries and collections
+- [csvkit](https://pypi.org/project/csvkit/) - Suite of utilities for working with CSV files
+- [internetarchive cli tool `ia`](https://pypi.org/project/internetarchive/) - Command-line interface to Internet Archive
 
 **Note**: If the script you want isn't showing up on the PyPi site as pip-installable, it may need a different installation method - check the script's documentation for details. Other common flows are:
 - get source code from as a zip from GitHub
