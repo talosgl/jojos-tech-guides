@@ -7,14 +7,6 @@ This guide covers how to annotate a codebase you cannot or do not want to modify
 
 **Example use case**: When I'm working on my own code or a forked open source repository, I can just use code comments to annotate as I read line-by-line. I do this to help myself learn it, internalize, and make sure I truly understand what code is doing. But what about when there is not a way to fork the code? Perhaps the version control system (VCS) used by the team doesn't allow for that sort of branching, or for whatever reason, I don't want to pollute the original code files with comments as I read through. I want a way to take notes and associate those notes with specific parts of code in my IDE, like I would with MS Word's inline comments feature.
 
-Before we begin, here are a couple of **important limitations and warnings to know about**:
-
-**Annotations will be tied to specific line numbers.** If the code changes (lines added/removed, files moved around), you'll need to manually update your notes. This works best for stable codebases or when you include enough context in notes to relocate them manually.
-
-**Do not create your annotation vault inside a cloud-synced folder** (like OneDrive, Dropbox, iCloud, Google Drive, etc.). Cloud sync services follow junctions/symlinks and will attempt to sync the entire target codebase, potentially uploading gigabytes of unintended files.
-
----
-
 MS Word's inline comment feature:
 
 <img src="imgs/ms_word_annotation.png" alt="MS Word's inline comment feature" width="600">
@@ -24,12 +16,23 @@ How our VS Code + Line Notes workflow will look after setup:
 <img src="imgs/overview_img_of_finished_setup.png" alt="How our VS Code workflow will look after setup" width="600">
 
 ---
+### Key Limitations
+Before we begin, here are a couple of important limitations to know about:
+
+> [!IMPORTANT]
+> **Annotations will be tied to specific line numbers.** If the code changes (lines added/removed, files moved around), you'll need to manually update your notes. This works best for stable codebases or when you include enough context in notes to relocate them manually.
+
+> [!WARNING]
+> **Do not create your annotation vault inside a cloud-synced folder** (like OneDrive, Dropbox, iCloud, Google Drive, etc.). Cloud sync services follow junctions/symlinks and will attempt to sync the entire target codebase, potentially uploading gigabytes of unintended files.
+
+---
 
 ### Prerequisites
 
 This guide assumes more prerequisites than most on this site. We assume you:
 - Are comfortable using the shell/terminal/command line in your operating system to do things like navigate the file system and create directories
 - Have VS Code installed and know the basics, including how to install & use extensions
+- We do not assume you are familiar with junctions/symlinks; however, it probably helps if you are
 
 ### Goal
 
