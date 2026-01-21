@@ -5,9 +5,13 @@
 
 This guide covers how to annotate a codebase you cannot or do not want to modify. Notes stay completely separate from source files. We'll use VS Code, the [Line Note Extension](https://marketplace.visualstudio.com/items?itemName=tkrkt.linenote) (MIT License), and OS filesystem junctions/symlinks to create a separate "vault" for annotations.
 
-**Important limitation**: Annotations will be tied to specific line numbers. If the code changes (lines added/removed, files moved around), you'll need to manually update your notes. This works best for stable codebases or when you include enough context in notes to relocate them manually.
-
 **Example use case**: When I'm working on my own code or a forked open source repository, I can just use code comments to annotate as I read line-by-line. I do this to help myself learn it, internalize, and make sure I truly understand what code is doing. But what about when there is not a way to fork the code? Perhaps the version control system (VCS) used by the team doesn't allow for that sort of branching, or for whatever reason, I don't want to pollute the original code files with comments as I read through. I want a way to take notes and associate those notes with specific parts of code in my IDE, like I would with MS Word's inline comments feature.
+
+Before we begin, here are a couple of **important limitations and warnings to know about**:
+
+**Annotations will be tied to specific line numbers.** If the code changes (lines added/removed, files moved around), you'll need to manually update your notes. This works best for stable codebases or when you include enough context in notes to relocate them manually.
+
+**Do not create your annotation vault inside a cloud-synced folder** (like OneDrive, Dropbox, iCloud, Google Drive, etc.). Cloud sync services follow junctions/symlinks and will attempt to sync the entire target codebase, potentially uploading gigabytes of unintended files.
 
 ---
 
@@ -36,7 +40,7 @@ Set up a system to annotate code with visual indicators, keeping notes separate 
 ## Steps
 ### Set up folder structure and junction
 
-Create a vault folder and navigate to it:
+Create a vault folder and navigate to it (remember: choose a location outside of any cloud-synced folders):
 ```bash
 # Windows
 mkdir C:\my_notes_vault
@@ -60,7 +64,7 @@ Now we will create a junction or symlink to the codebase we want to annotate.
 
 It's basically a pointer to the real folder, formatted in a manner where VS Code will display it as if the folder were living in this spot instead of wherever its actual parent folder is.
 
-You don't really need to understand this in depth, just know that any changes you make in a junctioned version of a directory are going to write to the REAL directory. In other words you probably do not want to ever edit the code from here. It is intended as a read-only view for your notes. (If you are using a version control system for your code that does not allow auto-checkout on edit, then that should protect you from accidentally editing the codebase.)
+You don't really need to understand this in depth, just know that 1) again, cloud-sync services like OneDrive don't behave well with junctions and will sync them like any other folder, and 2) any changes you make in a junctioned version of a directory are going to write to the REAL directory. In other words **you do not want to edit the source code itself from here.** It is intended as a read-only view for your notes. (If you are using a version control system for your code that does not allow auto-checkout on edit, then that should protect you from accidentally editing the codebase.)
 </details>
 
 Still from inside `my_repo_annotations`, create the Junction/Symlink like so:
@@ -136,8 +140,6 @@ To add notes faster, you can set up a keyboard shortcut:
 This is *extra* optional. Only follow if you want to version control your annotations with git!
 
 In this scenario, we want a git repo for ONLY our notes, not the codebase that we're learning and annotating. Therefore, we must explicitly ignore the junctioned/symlinked version of the codebase in our .gitignore.
-
-**Note:** If you created your annotation vault in a cloud-synced location (OneDrive, Dropbox, iCloud, etc.), be aware that syncing the `.git` folder can cause conflicts. You should probably choose EITHER git or your cloud-sync; if you choose git, move the vault out of the cloud-sync location. If you really want to try both, consider excluding the `.git` subfolder from cloud sync.
 
 Initialize git from inside `my_repo_annotations`:
 
