@@ -54,7 +54,7 @@ If you're not sure which asset to pick, look for your operating system name (Win
 
 ---
 
-## Downloading the File
+## Download the File
 
 1. Click on the `.zip` file (or appropriate file for your platform) in the Assets section
 2. Your browser will download it (usually to your `Downloads` folder)
@@ -62,7 +62,7 @@ If you're not sure which asset to pick, look for your operating system name (Win
 
 ---
 
-## (Optional) Advanced: Verifying Your Download by Checksum
+## (Optional) Advanced: Verify Your Download by Checksum
 
 Some developers provide a **checksum** (a unique fingerprint for the file) to ensure what you downloaded is exactly what they uploaded and intended to distribute, and hasn't been corrupted or tampered with.
 
@@ -109,7 +109,7 @@ If the release notes include a **SHA256 Checksum**, you can verify it:
 
 ---
 
-## Extracting the Files
+## Extract the Files
 
 ### Windows
 
@@ -157,7 +157,7 @@ Some releases include a formal installer file (`.msi`, `setup.exe`, or `install.
 4. The program will typically install to `C:\Program Files\[ProgramName]\`
 
 ---
-## Running the Program
+## Run the Program
 
 ### First Time: Windows SmartScreen Warning
 
@@ -233,14 +233,3 @@ When a developer releases an update:
 - [ ] Move the program folder to a permanent location
 - [ ] Create shortcuts as needed
 
----
-
-## Related Guides
-
-- [What is a Checksum?](https://www.howtogeek.com/363735/what-is-a-checksum-and-why-should-you-care/) (How-To Geek)
-- *Coming soon: Installing Python packages from PyPI*
-- *Coming soon: Compiling from source (advanced)*
-
----
-
-**Questions or issues?** Open an issue on this guide's repository or suggest edits via pull request.
