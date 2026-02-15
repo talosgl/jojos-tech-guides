@@ -1,0 +1,5 @@
+#!/bin/sh
+# Remove remote URLs from merge commit messages
+if [ "$2" = "merge" ]; then
+  sed -i 's| of https://[^ ]*||g' "$1"
+fi
