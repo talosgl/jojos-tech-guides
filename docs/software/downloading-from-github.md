@@ -1,7 +1,7 @@
 # How to Download and Install Programs from GitHub
 
 **For:** People who want to download and use software distributed on GitHub
-**Platform:** Windows (macOS guide coming later)
+**Platform:** Windows and macOS
 **Difficulty:** Beginner-friendly
 
 ---
@@ -42,7 +42,6 @@ Under "Assets," you'll see the available downloads. Common file types:
 | `.dmg` or `.pkg` | Disk image/package | macOS only           |
 | `.tar.gz`        | Compressed archive | Mac/Linux            |
 | `Source code`    | Raw code files     | ⚠️ Not for end-users |
-|                  |                    |                      |
 
 If you're not sure which asset to pick, look for your operating system name (Windows, macOS, Debian, Fedora, etc.) and a .zip file.
 
@@ -103,6 +102,32 @@ If the release notes include a **SHA256 Checksum**, you can verify it:
 
 <img src="imgs/downloading-from-github/powershell_verify_checksum_hash.png" alt="PowerShell window showing checksum verification output" width="600">
 
+### How to Verify (macOS)
+
+1. **Open Terminal**
+   - Press `Cmd + Space`, type "Terminal", and press Enter
+
+2. **Navigate to your Downloads folder**
+   ```bash
+   cd ~/Downloads
+   ```
+
+3. **Run the checksum command**
+   ```bash
+   shasum -a 256 filename.zip
+   ```
+   Replace `filename.zip` with the actual filename.
+
+4. **Compare the output**
+   - Terminal will display a long string of numbers and letters
+   - Compare it to the checksum in the release notes
+   - They should match exactly
+   - You can also have Terminal check for you by running:
+     ```bash
+     echo "expected_checksum_here  filename.zip" | shasum -a 256 --check
+     ```
+     Replace `expected_checksum_here` with the checksum from the release notes, and `filename.zip` with the actual filename. It will output `filename.zip: OK` if they match, or `filename.zip: FAILED` if they don't.
+
 **What if they don't match?**
 - Delete the file and redownload it
 - Do NOT use the file - it may be corrupted or tampered with
@@ -116,7 +141,7 @@ If the release notes include a **SHA256 Checksum**, you can verify it:
 Windows' built-in extraction works fine, but I personally prefer [7-Zip](https://www.7-zip.org/).
 
 1. **Right-click the `.zip` file** you downloaded
-2. Select **Extract All....** to use Windows' built-in extractor, or  **7-Zip → Extract to {folder name}**
+2. Select **Extract All...** to use Windows' built-in extractor, or  **7-Zip → Extract to {folder name}**
 3. You'll see a new folder with the extracted contents
 4. It's up to you where to store the folder; it is worth considering moving it out of your default Downloads location.
 
@@ -126,13 +151,19 @@ Windows' built-in extraction works fine, but I personally prefer [7-Zip](https:/
 
 <img src="imgs/downloading-from-github/zip_and_extracted_folder.png" alt="File explorer showing ZIP file and extracted folder side by side" width="400">
 
+### macOS
+
+1. **Double-click the `.zip` file** in Finder to extract it
+2. You'll see the extracted contents appear in the same folder (typically a `.app` file)
+3. It's up to you where to store the app; you may want to move it out of your Downloads folder (e.g., to your Applications folder or Desktop).
+
 ### What You'll See
 
 After extraction, you'll typically find:
-- An `.exe` file (the program itself)
-- Supporting files and folders (DLLs, resources, etc.)
+- **Windows:** An `.exe` file (the program itself) and supporting files and folders (DLLs, resources, etc.)
+- **macOS:** A `.app` file (the program itself), which is a self-contained application bundle
 
-⚠️ **Important:** Keep all files together in the same folder. Don't move just the `.exe` file.
+⚠️ **Important (Windows):** Keep all files together in the same folder. Don't move just the `.exe` file—it needs the supporting files next to it.
 
 ---
 ## (If Needed) Installing the Program
@@ -143,36 +174,34 @@ Many programs distributed via GitHub releases are **portable** - they run direct
 
 **Characteristics:**
 - No installation needed beyond extracting the .zip
-- You can run the `.exe` directly from the extracted folder
-- You can move the folder anywhere
-- Deleting the folder = uninstalling
+- **Windows:** You can run the `.exe` directly from the extracted folder
+- **macOS:** You can run the `.app` directly, or drag it into your Applications folder
+- You can move the folder/app anywhere
+- Deleting the folder/app = uninstalling
 
 ### If There's an Installer
 
-Some releases include a formal installer file (`.msi`, `setup.exe`, or `install.exe`):
+Some releases include a formal installer file:
+- **Windows:** `.msi`, `setup.exe`, or `install.exe`
+- **macOS:** `.dmg` or `.pkg`
 
-1. Look for a file with "setup" or "install" in the name, or ending in `.msi` (Windows)
-2. Double-click to run the installer
-3. Follow the installation wizard prompts
-4. The program will typically install to `C:\Program Files\[ProgramName]\`
+1. Double-click to run the installer
+2. Follow the installation wizard prompts
+3. The program will typically install to `C:\Program Files\[ProgramName]\` (Windows) or `/Applications/` (macOS)
 
 ---
 ## Run the Program
 
-### First Time: Windows SmartScreen Warning
+Both Windows and macOS will show a security warning the first time you run a program downloaded from the internet. **This is normal for new programs that aren't widely downloaded yet.** Both operating systems use "reputation-based protection"—new programs or programs from smaller developers haven't built up enough downloads to establish trust, so your OS warns you to be cautious.
 
-Windows may show a security warning the first time you run a program:
+### First Time on Windows: SmartScreen Warning
+
+Windows may show a security warning:
 
 > "Windows protected your PC"
 > "Microsoft Defender SmartScreen prevented an unrecognized app from starting"
 
 <img src="imgs/downloading-from-github/win_smart_screen_popup.png" alt="Windows SmartScreen warning dialog" width="600">
-
-**This is normal for new programs that aren't widely downloaded yet.**
-
-#### Why Does This Happen?
-
-Windows SmartScreen uses "reputation-based protection." New programs or programs from smaller developers haven't built up enough downloads yet to establish trust, so Windows warns you to be cautious.
 
 #### How to Run Anyway
 
@@ -185,11 +214,34 @@ If you trust the source (e.g., you verified the checksum, it's from a legitimate
 
 **Note:** You only need to do this once. After the first run, Windows remembers and won't warn you again.
 
+### First Time on macOS: Gatekeeper Warning
+
+macOS will block apps from "unidentified developers" (i.e., developers who haven't paid for an Apple Developer certificate). You'll see a warning that the app "can't be opened" or is "from an unidentified developer."
+
+#### How to Run Anyway
+
+If you trust the source (e.g., you verified the checksum, it's from a legitimate GitHub project):
+
+1. **Right-click** (or Control-click) the `.app` file and select **"Open"**
+2. macOS will warn the app is from an unidentified developer.
+	- <img src="imgs/downloading-from-github/macos_apple_couldnt_verify_popup.png" alt="macOS unidentified developer warning popup" width="200">
+3. Click the **question mark** icon in the upper-right of the prompt if you'd like more info from Apple on the topic.
+	- <img src="imgs/downloading-from-github/macos_apple_couldnt_verify_popup_q_mark_circled.png" alt="macOS warning popup with question mark icon circled" width="200">
+	- <img src="imgs/downloading-from-github/macos_apple_couldnt_verify_plus_more_info.png" alt="Apple help page about unverified apps" width="400">
+4. Click **"Done"** to dismiss the prompt.
+5. Open **System Settings** → **Privacy & Security**, and scroll down to the **Security** section. You'll see a message that the app was blocked to protect your Mac.
+	- <img src="imgs/downloading-from-github/macos_settings_security_app_was_blocked_open_anyway.png" alt="macOS System Settings showing app was blocked with Open Anyway button" width="400">
+6. Click **"Open Anyway"**; enter your password if prompted.
+	- <img src="imgs/downloading-from-github/macos_open_anyway_prompt.png" alt="macOS Open Anyway confirmation prompt" width="200">
+7. The app should now run normally. It should not prompt you again on subsequent launches unless you download a new version.
+
+If the app asks for permission to access folders (like Documents), click **"Allow"** if you're comfortable with it—some apps store their working files there.
+
 ---
 
 ## Troubleshooting
 
-### "The program can't start because [something].dll is missing"
+### "The program can't start because [something].dll is missing" (Windows)
 
 - You may have moved only the `.exe` file instead of the whole folder
 - **Solution:** Move the entire extracted folder, keeping all files together
@@ -199,16 +251,27 @@ If you trust the source (e.g., you verified the checksum, it's from a legitimate
 - Some security settings block all unrecognized programs
 - **Solution:** Check with your IT department or adjust Windows Defender settings (advanced)
 
+### macOS says the app "is damaged and can't be opened"
+
+- This can happen if macOS quarantines the downloaded file
+- **Solution:** Try right-clicking the `.app` and selecting "Open" instead of double-clicking. If that doesn't work, try redownloading and extracting fresh.
+
+### The "Open Anyway" option doesn't appear in macOS System Settings
+
+- The option only appears after you've attempted to open the blocked app
+- **Solution:** Try to open the app first (right-click → Open), dismiss the warning, then check System Settings → Privacy & Security
+
 ### The program crashes or doesn't work
 
 - Check the GitHub project's **Issues** page - others may have reported the same problem
-- Look for system requirements (Windows version, dependencies, etc.)
+- Look for system requirements (OS version, dependencies, etc.)
 - Try redownloading and extracting fresh
 
 ### I can't find the downloaded file
 
 - Check your browser's **Downloads** folder
-- In most browsers: `Ctrl + J` opens your download history
+- Windows: `Ctrl + J` opens your download history in most browsers
+- macOS: Open Finder and click **Downloads** in the sidebar, or `Cmd + Option + L` in most browsers opens download history
 
 ---
 
@@ -225,11 +288,11 @@ When a developer releases an update:
 ## Summary Checklist
 
 - [ ] Find the project's Releases page
-- [ ] Download the appropriate file for your platform (e.g., `.zip` for Windows)
+- [ ] Download the appropriate file for your platform
 - [ ] (Optional) Verify the checksum
-- [ ] Extract the files using 7-Zip or built-in tools
-- [ ] Run the `.exe` file
-- [ ] Click through SmartScreen warning if it appears
-- [ ] Move the program folder to a permanent location
+- [ ] Extract the files
+- [ ] Run the program (`.exe` on Windows, `.app` on macOS)
+- [ ] Click through the security warning if it appears (SmartScreen on Windows, Gatekeeper on macOS)
+- [ ] Move the program to a permanent location
 - [ ] Create shortcuts as needed
 
