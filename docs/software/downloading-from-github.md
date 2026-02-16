@@ -126,7 +126,7 @@ If the release notes include a **SHA256 Checksum**, you can verify it:
      ```bash
      echo "expected_checksum_here  filename.zip" | shasum -a 256 --check
      ```
-     Replace `expected_checksum_here` with the checksum from the release notes, and `filename.zip` with the actual filename. It will output `filename.zip: OK` if they match, or `filename.zip: FAILED` if they don't.
+     Replace `expected_checksum_here` with the checksum from the release notes, and `filename.zip` with the actual filename. THERE MUST BE TWO SPACES BETWEEN THESE. It will output `filename.zip: OK` if they match, or `filename.zip: FAILED` if they don't.
 
 **What if they don't match?**
 - Delete the file and redownload it
