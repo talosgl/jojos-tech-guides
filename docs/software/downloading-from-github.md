@@ -296,3 +296,7 @@ When a developer releases an update:
 - [ ] Move the program to a permanent location
 - [ ] Create shortcuts as needed
 
+## Video Resources
+- [Video - Run Application Blocked by Windows Smart Screen](https://youtu.be/JnQbOfr9rP8)
+- [Video - Run App Blocked by macOS Security](https://youtu.be/W70Yxx62Vrc)
+
